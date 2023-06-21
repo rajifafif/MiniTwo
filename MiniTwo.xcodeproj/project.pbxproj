@@ -16,6 +16,9 @@
 		656D11892A3C0B0B00334554 /* MiniTwoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656D11882A3C0B0B00334554 /* MiniTwoTests.swift */; };
 		656D11932A3C0B0B00334554 /* MiniTwoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656D11922A3C0B0B00334554 /* MiniTwoUITests.swift */; };
 		656D11952A3C0B0B00334554 /* MiniTwoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656D11942A3C0B0B00334554 /* MiniTwoUITestsLaunchTests.swift */; };
+		65B64F492A42949000F79350 /* FullWidth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B64F482A42949000F79350 /* FullWidth.swift */; };
+		65B64F4E2A42966200F79350 /* Plan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B64F4D2A42966200F79350 /* Plan.swift */; };
+		65B64F502A429F5300F79350 /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B64F4F2A429F5300F79350 /* MockData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,9 @@
 		656D118E2A3C0B0B00334554 /* MiniTwoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MiniTwoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		656D11922A3C0B0B00334554 /* MiniTwoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniTwoUITests.swift; sourceTree = "<group>"; };
 		656D11942A3C0B0B00334554 /* MiniTwoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniTwoUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		65B64F482A42949000F79350 /* FullWidth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullWidth.swift; sourceTree = "<group>"; };
+		65B64F4D2A42966200F79350 /* Plan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plan.swift; sourceTree = "<group>"; };
+		65B64F4F2A429F5300F79350 /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +105,7 @@
 		656D11702A3C0B0A00334554 /* MiniTwo */ = {
 			isa = PBXGroup;
 			children = (
+				65B64F422A42944000F79350 /* Core */,
 				656D11712A3C0B0A00334554 /* MiniTwoApp.swift */,
 				656D11732A3C0B0A00334554 /* Persistence.swift */,
 				656D11782A3C0B0A00334554 /* ContentView.swift */,
@@ -133,6 +140,64 @@
 				656D11942A3C0B0B00334554 /* MiniTwoUITestsLaunchTests.swift */,
 			);
 			path = MiniTwoUITests;
+			sourceTree = "<group>";
+		};
+		65B64F422A42944000F79350 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				65B64F442A42945500F79350 /* Themes */,
+				65B64F432A42944B00F79350 /* Data */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		65B64F432A42944B00F79350 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				65B64F4C2A4295DA00F79350 /* Mock */,
+				65B64F4B2A4295D000F79350 /* Entities */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		65B64F442A42945500F79350 /* Themes */ = {
+			isa = PBXGroup;
+			children = (
+				65B64F462A42946F00F79350 /* Presentations */,
+			);
+			path = Themes;
+			sourceTree = "<group>";
+		};
+		65B64F462A42946F00F79350 /* Presentations */ = {
+			isa = PBXGroup;
+			children = (
+				65B64F472A42948200F79350 /* Modifiers */,
+			);
+			path = Presentations;
+			sourceTree = "<group>";
+		};
+		65B64F472A42948200F79350 /* Modifiers */ = {
+			isa = PBXGroup;
+			children = (
+				65B64F482A42949000F79350 /* FullWidth.swift */,
+			);
+			path = Modifiers;
+			sourceTree = "<group>";
+		};
+		65B64F4B2A4295D000F79350 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				65B64F4D2A42966200F79350 /* Plan.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		65B64F4C2A4295DA00F79350 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				65B64F4F2A429F5300F79350 /* MockData.swift */,
+			);
+			path = Mock;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -265,9 +330,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65B64F492A42949000F79350 /* FullWidth.swift in Sources */,
 				656D11722A3C0B0A00334554 /* MiniTwoApp.swift in Sources */,
+				65B64F4E2A42966200F79350 /* Plan.swift in Sources */,
 				656D11772A3C0B0A00334554 /* MiniTwo.xcdatamodeld in Sources */,
 				656D11792A3C0B0A00334554 /* ContentView.swift in Sources */,
+				65B64F502A429F5300F79350 /* MockData.swift in Sources */,
 				656D11742A3C0B0A00334554 /* Persistence.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
