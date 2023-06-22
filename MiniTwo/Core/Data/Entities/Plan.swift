@@ -12,6 +12,7 @@ class Plan: Identifiable, Equatable {
     var propertyPrice: Float
     var downPaymentAmount: Float?
     var tenor: Int
+    
     var fixInterests: [Float]
     var floatingInterests: [Float]
     
@@ -19,12 +20,14 @@ class Plan: Identifiable, Equatable {
         propertyPrice: Float,
         downPaymentAmount: Float?,
         tenor: Int,
+        
         fixInterests: [Float] = [],
         floatingInterests: [Float] = []
     ) {
         self.propertyPrice = propertyPrice
         self.downPaymentAmount = downPaymentAmount
         self.tenor = tenor
+        
         self.fixInterests = fixInterests
         self.floatingInterests = floatingInterests
     }
