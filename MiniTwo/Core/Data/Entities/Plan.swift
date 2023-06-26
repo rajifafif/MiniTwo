@@ -9,7 +9,8 @@ import Foundation
 
 class Plan: Identifiable, Equatable {
     let id: String = UUID().uuidString
-    var propertyPrice: Float
+    var name: String
+    var propertyPrice: Int32
     var downPaymentAmount: Float?
     var tenor: Int
     
@@ -17,13 +18,15 @@ class Plan: Identifiable, Equatable {
     var floatingInterests: [Float]
     
     init(
-        propertyPrice: Float,
-        downPaymentAmount: Float?,
+        name: String,
+        propertyPrice: Int32,
+        downPaymentAmount: Float? = 0,
         tenor: Int,
         
         fixInterests: [Float] = [],
         floatingInterests: [Float] = []
     ) {
+        self.name = name
         self.propertyPrice = propertyPrice
         self.downPaymentAmount = downPaymentAmount
         self.tenor = tenor

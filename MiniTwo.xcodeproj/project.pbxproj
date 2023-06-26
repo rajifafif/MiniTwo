@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		656D11722A3C0B0A00334554 /* MiniTwoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656D11712A3C0B0A00334554 /* MiniTwoApp.swift */; };
-		656D11742A3C0B0A00334554 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656D11732A3C0B0A00334554 /* Persistence.swift */; };
 		656D11772A3C0B0A00334554 /* MiniTwo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 656D11752A3C0B0A00334554 /* MiniTwo.xcdatamodeld */; };
 		656D11792A3C0B0A00334554 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656D11782A3C0B0A00334554 /* ContentView.swift */; };
 		656D117B2A3C0B0B00334554 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 656D117A2A3C0B0B00334554 /* Assets.xcassets */; };
@@ -21,6 +20,8 @@
 		65B64F502A429F5300F79350 /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B64F4F2A429F5300F79350 /* MockData.swift */; };
 		65B64F522A43EA0300F79350 /* BankProgram.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B64F512A43EA0300F79350 /* BankProgram.swift */; };
 		65B64F542A43EA9900F79350 /* Bank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B64F532A43EA9900F79350 /* Bank.swift */; };
+		9CA9AFF92A499B3700BFDAA6 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA9AFF82A499B3700BFDAA6 /* CoreDataManager.swift */; };
+		9CA9AFFB2A499B8400BFDAA6 /* PlanDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA9AFFA2A499B8400BFDAA6 /* PlanDataViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,7 +44,6 @@
 /* Begin PBXFileReference section */
 		656D116E2A3C0B0A00334554 /* MiniTwo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MiniTwo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		656D11712A3C0B0A00334554 /* MiniTwoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniTwoApp.swift; sourceTree = "<group>"; };
-		656D11732A3C0B0A00334554 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		656D11762A3C0B0A00334554 /* MiniTwo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MiniTwo.xcdatamodel; sourceTree = "<group>"; };
 		656D11782A3C0B0A00334554 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		656D117A2A3C0B0B00334554 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -59,6 +59,8 @@
 		65B64F4F2A429F5300F79350 /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
 		65B64F512A43EA0300F79350 /* BankProgram.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankProgram.swift; sourceTree = "<group>"; };
 		65B64F532A43EA9900F79350 /* Bank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bank.swift; sourceTree = "<group>"; };
+		9CA9AFF82A499B3700BFDAA6 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		9CA9AFFA2A499B8400BFDAA6 /* PlanDataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanDataViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,7 +113,6 @@
 			children = (
 				65B64F422A42944000F79350 /* Core */,
 				656D11712A3C0B0A00334554 /* MiniTwoApp.swift */,
-				656D11732A3C0B0A00334554 /* Persistence.swift */,
 				656D11782A3C0B0A00334554 /* ContentView.swift */,
 				656D117A2A3C0B0B00334554 /* Assets.xcassets */,
 				656D117C2A3C0B0B00334554 /* MiniTwo.entitlements */,
@@ -160,6 +161,8 @@
 			children = (
 				65B64F4C2A4295DA00F79350 /* Mock */,
 				65B64F4B2A4295D000F79350 /* Entities */,
+				9CA9AFF82A499B3700BFDAA6 /* CoreDataManager.swift */,
+				9CA9AFFA2A499B8400BFDAA6 /* PlanDataViewModel.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -338,13 +341,14 @@
 			files = (
 				65B64F522A43EA0300F79350 /* BankProgram.swift in Sources */,
 				65B64F492A42949000F79350 /* FullWidth.swift in Sources */,
+				9CA9AFFB2A499B8400BFDAA6 /* PlanDataViewModel.swift in Sources */,
 				656D11722A3C0B0A00334554 /* MiniTwoApp.swift in Sources */,
 				65B64F4E2A42966200F79350 /* Plan.swift in Sources */,
 				656D11772A3C0B0A00334554 /* MiniTwo.xcdatamodeld in Sources */,
 				656D11792A3C0B0A00334554 /* ContentView.swift in Sources */,
 				65B64F542A43EA9900F79350 /* Bank.swift in Sources */,
 				65B64F502A429F5300F79350 /* MockData.swift in Sources */,
-				656D11742A3C0B0A00334554 /* Persistence.swift in Sources */,
+				9CA9AFF92A499B3700BFDAA6 /* CoreDataManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
