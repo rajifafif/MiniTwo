@@ -22,6 +22,8 @@
 		65B64F542A43EA9900F79350 /* Bank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B64F532A43EA9900F79350 /* Bank.swift */; };
 		9CA9AFF92A499B3700BFDAA6 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA9AFF82A499B3700BFDAA6 /* CoreDataManager.swift */; };
 		9CA9AFFB2A499B8400BFDAA6 /* PlanDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA9AFFA2A499B8400BFDAA6 /* PlanDataViewModel.swift */; };
+		65B64F582A4A7A9C00F79350 /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B64F572A4A7A9C00F79350 /* Main.swift */; };
+		65B64F5D2A4A838100F79350 /* MainTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B64F5C2A4A838100F79350 /* MainTemplate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +63,8 @@
 		65B64F532A43EA9900F79350 /* Bank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bank.swift; sourceTree = "<group>"; };
 		9CA9AFF82A499B3700BFDAA6 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		9CA9AFFA2A499B8400BFDAA6 /* PlanDataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanDataViewModel.swift; sourceTree = "<group>"; };
+		65B64F572A4A7A9C00F79350 /* Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
+		65B64F5C2A4A838100F79350 /* MainTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTemplate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +115,7 @@
 		656D11702A3C0B0A00334554 /* MiniTwo */ = {
 			isa = PBXGroup;
 			children = (
+				65B64F552A4A7A8100F79350 /* Views */,
 				65B64F422A42944000F79350 /* Core */,
 				656D11712A3C0B0A00334554 /* MiniTwoApp.swift */,
 				656D11782A3C0B0A00334554 /* ContentView.swift */,
@@ -207,6 +212,31 @@
 				65B64F4F2A429F5300F79350 /* MockData.swift */,
 			);
 			path = Mock;
+			sourceTree = "<group>";
+		};
+		65B64F552A4A7A8100F79350 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				65B64F592A4A7AA300F79350 /* Components */,
+				65B64F562A4A7A8C00F79350 /* Pages */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		65B64F562A4A7A8C00F79350 /* Pages */ = {
+			isa = PBXGroup;
+			children = (
+				65B64F572A4A7A9C00F79350 /* Main.swift */,
+			);
+			path = Pages;
+			sourceTree = "<group>";
+		};
+		65B64F592A4A7AA300F79350 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				65B64F5C2A4A838100F79350 /* MainTemplate.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -339,11 +369,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65B64F582A4A7A9C00F79350 /* Main.swift in Sources */,
 				65B64F522A43EA0300F79350 /* BankProgram.swift in Sources */,
 				65B64F492A42949000F79350 /* FullWidth.swift in Sources */,
 				9CA9AFFB2A499B8400BFDAA6 /* PlanDataViewModel.swift in Sources */,
 				656D11722A3C0B0A00334554 /* MiniTwoApp.swift in Sources */,
 				65B64F4E2A42966200F79350 /* Plan.swift in Sources */,
+				65B64F5D2A4A838100F79350 /* MainTemplate.swift in Sources */,
 				656D11772A3C0B0A00334554 /* MiniTwo.xcdatamodeld in Sources */,
 				656D11792A3C0B0A00334554 /* ContentView.swift in Sources */,
 				65B64F542A43EA9900F79350 /* Bank.swift in Sources */,
