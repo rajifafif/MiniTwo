@@ -43,42 +43,22 @@ struct SimulationFormView: View {
                     .font(.largeTitle.bold())
                     .padding(.leading)
                 
-                VStack {
-                    VStack(alignment: .leading) {
-                        Text("Harga properti")
-                        TextField("Rp1.000.000.000", text: $hargaProperti)
-                            .padding(.all, 12)
-                            .frame(width: UIScreen.main.bounds.width - 30)
-                            .background(Color(UIColor.systemGray5))
-                            .cornerRadius(5)
-                    }
+                VStack(spacing: 20) {
+                    TextFieldView(title: "Harga properti",
+                                  placeholder: "Rp1.000.000.000",
+                                  text: $hargaProperti)
                     
-                    VStack(alignment: .leading) {
-                        Text("Nominal DP")
-                        TextField("Rp1.000.000.000", text: $nominalDP)
-                            .padding(.all, 12)
-                            .frame(width: UIScreen.main.bounds.width - 30)
-                            .background(Color(UIColor.systemGray5))
-                            .cornerRadius(5)
-                    }
+                    TextFieldView(title: "Nominal DP",
+                                  placeholder: "Rp100.000.000",
+                                  text: $nominalDP)
                     
-                    VStack(alignment: .leading) {
-                        Text("Masa tenor")
-                        TextField("10 tahun", text: $masaTenor)
-                            .padding(.all, 12)
-                            .frame(width: UIScreen.main.bounds.width - 30)
-                            .background(Color(UIColor.systemGray5))
-                            .cornerRadius(5)
-                    }
+                    TextFieldView(title: "Masa tenor",
+                                  placeholder: "10 tahun",
+                                  text: $masaTenor)
                     
-                    VStack(alignment: .leading) {
-                        Text("Gaji saat ini")
-                        TextField("Rp10.000.000", text: $gaji)
-                            .padding(.all, 12)
-                            .frame(width: UIScreen.main.bounds.width - 30)
-                            .background(Color(UIColor.systemGray5))
-                            .cornerRadius(5)
-                    }
+                    TextFieldView(title: "Gaji saat ini",
+                                  placeholder: "Rp10.000.000",
+                                  text: $gaji)
                 }
                 .font(.body)
                 .padding()
@@ -95,11 +75,12 @@ struct SimulationFormView: View {
                     .font(.body.bold())
                     .foregroundColor(.white)
                     .padding(.all, 12)
-                    .frame(width: UIScreen.main.bounds.width - 30)
+                    .frame(width: UIScreen.main.bounds.width - 35)
                     .background(.blue)
                     .cornerRadius(8)
                     Spacer()
                 })
+                .padding(.vertical, 10)
             }
             .padding(.horizontal, 50)
         }

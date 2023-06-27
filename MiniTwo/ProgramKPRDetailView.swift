@@ -121,6 +121,21 @@ struct ProgramKPRDetailView: View {
             .border(Color(UIColor.systemGray4))
             
             Spacer()
+            
+            Button(action: {
+                // add action here ngab
+                
+            }, label: {
+                Text("Simpan")
+                    .font(.body.bold())
+                    .foregroundColor(.white)
+                    .padding(.all, 12)
+                    .frame(width: UIScreen.main.bounds.width - 35)
+                    .background(.blue)
+                    .cornerRadius(8)
+            })
+            .padding(.vertical, 10)
+            
         }
         .padding()
     }

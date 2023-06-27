@@ -23,6 +23,7 @@ struct ProgramKPRCardView: View {
                     Text("Fixed 3 tahun")
                         .font(.title3.bold())
                 }
+                
                 Spacer()
                 
                 Image(systemName: "arrow.forward.square")
