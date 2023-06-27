@@ -12,7 +12,8 @@ struct MiniTwoApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            SimulationFormView()
+                .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
 }
