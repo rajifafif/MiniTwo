@@ -9,22 +9,23 @@ import SwiftUI
 
 struct ProgramKPRDetailView: View {
     var body: some View {
-        VStack(spacing: 20) {
+        VStack(spacing: 12) {
             Text("Fixed 3 Tahun")
                 .font(.title2)
                 .fontWeight(.heavy)
-                .padding(.bottom)
+                .padding(.bottom, 5)
             
             VStack {
                 HStack {
                     Text("Informasi KPR")
-                        .font(.title3.bold())
+                        .font(.body)
+                        .fontWeight(.bold)
                     Spacer()
                 }
                 
                 Divider()
                 
-                VStack(spacing: 8) {
+                VStack(spacing: 4) {
                     HStack {
                         Text("Pemasukan")
                         Spacer()
@@ -66,11 +67,12 @@ struct ProgramKPRDetailView: View {
                     Spacer()
                     Text("\(3) tahun")
                 }
-                .font(.title3.bold())
+                .font(.body)
+                .fontWeight(.bold)
                 
                 Divider()
                 
-                VStack(spacing: 8) {
+                VStack(spacing: 4) {
                     HStack {
                         Text("Rate")
                         Spacer()
@@ -94,11 +96,12 @@ struct ProgramKPRDetailView: View {
                     Spacer()
                     Text("\(12) tahun")
                 }
-                .font(.title3.bold())
+                .font(.body)
+                .fontWeight(.bold)
                 
                 Divider()
                 
-                VStack(spacing: 8) {
+                VStack(spacing: 4) {
                     HStack {
                         Text("Rate")
                         Spacer()
@@ -113,6 +116,40 @@ struct ProgramKPRDetailView: View {
                         Text("Rp\(12000000) / bulan")
                             .foregroundColor(.green)
                             .bold()
+                    }
+                }
+                .font(.body)
+            }
+            .padding()
+            .border(Color(UIColor.systemGray4))
+            
+            VStack {
+                HStack {
+                    Text("Bandingkan Program")
+                }
+                .font(.body)
+                .fontWeight(.bold)
+                
+                Divider()
+                
+                VStack(spacing: 4) {
+                    HStack {
+                        Text("\(3)")
+                            .font(.title3.bold())
+                            .foregroundColor(.white)
+                            .frame(width: 50, height: 50)
+                            .background(.blue)
+                            .cornerRadius(8)
+                        
+                        Image(systemName: "plus.circle")
+                            .resizable()
+                            .scaledToFit()
+                            .foregroundColor(.blue)
+                        
+                        Image(systemName: "plus.circle")
+                            .resizable()
+                            .scaledToFit()
+                            .foregroundColor(.blue)
                     }
                 }
                 .font(.body)

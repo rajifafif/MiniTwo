@@ -13,9 +13,18 @@ struct TextFieldView: View {
     var placeholder: String
     @Binding var text: String
     
+    @ObservedObject var sheetStateManager = SheetStateManager.shared
+    
     var body: some View {
         VStack(alignment: .leading) {
-            Text(title)
+            HStack(alignment: .center) {
+                Text(title)
+                Button(action: {
+                    sheetStateManager.isPresented.toggle()
+                }, label: {
+                    Image(systemName: "info.circle")
+                })
+            }
             TextField(placeholder, text: $text)
                 .padding(.all, 12)
                 .frame(width: UIScreen.main.bounds.width - 35)

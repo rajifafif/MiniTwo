@@ -7,12 +7,18 @@
 
 import SwiftUI
 
+class SheetStateManager: ObservableObject {
+    @Published var isPresented = false
+    static let shared = SheetStateManager()
+}
+
 struct SimulationFormView: View {
     
     @State private var hargaProperti = ""
     @State private var nominalDP = ""
     @State private var masaTenor = ""
     @State private var gaji = ""
+    @ObservedObject var sheetStateManager = SheetStateManager.shared
     
     var body: some View {
         ZStack {
@@ -31,7 +37,7 @@ struct SimulationFormView: View {
                 endPoint: .bottom
             )
             .ignoresSafeArea()
-                
+            
             VStack(alignment: .leading) {
                 Spacer()
                 
@@ -83,6 +89,9 @@ struct SimulationFormView: View {
                 .padding(.vertical, 10)
             }
             .padding(.horizontal, 50)
+            .sheet(isPresented: $sheetStateManager.isPresented) {
+                InfoSheetView()
+            }
         }
     }
 }
