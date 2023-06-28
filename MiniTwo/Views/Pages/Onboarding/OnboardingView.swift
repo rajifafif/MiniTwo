@@ -9,6 +9,7 @@ import SwiftUI
 
 struct OnboardingView: View {
     @State private var currentTab = 0
+    @Binding var isSkipOnboarding: Bool
 
     var body: some View {
         VStack{
@@ -43,15 +44,12 @@ struct OnboardingView: View {
                 
                 
                 Button("Skip"){
-                    print("tes")
+                    isSkipOnboarding.toggle()
                 }
                 .foregroundColor(.black)
                 .padding()
                 .frame(width: UIScreen.main.bounds.width - 40)
-                //.foregroundStyle(.white)
-                //.frame(width: 300)
                 .clipShape(Capsule())
-               // .padding(.bottom, 25)
 
             }
 
@@ -65,6 +63,6 @@ struct OnboardingView: View {
 
 struct OnboardingView_Previews: PreviewProvider {
     static var previews: some View {
-        OnboardingView()
+        OnboardingView(isSkipOnboarding: .constant(false))
     }
 }
