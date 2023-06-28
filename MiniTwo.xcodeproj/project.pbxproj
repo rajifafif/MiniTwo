@@ -32,6 +32,10 @@
 		65B64F5D2A4A838100F79350 /* MainTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B64F5C2A4A838100F79350 /* MainTemplate.swift */; };
 		9CA9AFF92A499B3700BFDAA6 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA9AFF82A499B3700BFDAA6 /* CoreDataManager.swift */; };
 		9CA9AFFB2A499B8400BFDAA6 /* PlanDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA9AFFA2A499B8400BFDAA6 /* PlanDataViewModel.swift */; };
+		C16F23EB2A4BED9B002B0213 /* FirstOnboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16F23EA2A4BED9B002B0213 /* FirstOnboarding.swift */; };
+		C16F23ED2A4BEDA1002B0213 /* SecondOnboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16F23EC2A4BEDA1002B0213 /* SecondOnboarding.swift */; };
+		C16F23EF2A4BEDA6002B0213 /* ThirdOnboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16F23EE2A4BEDA6002B0213 /* ThirdOnboarding.swift */; };
+		C16F23F12A4BEDC6002B0213 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16F23F02A4BEDC6002B0213 /* OnboardingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +85,10 @@
 		65B64F5C2A4A838100F79350 /* MainTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTemplate.swift; sourceTree = "<group>"; };
 		9CA9AFF82A499B3700BFDAA6 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		9CA9AFFA2A499B8400BFDAA6 /* PlanDataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanDataViewModel.swift; sourceTree = "<group>"; };
+		C16F23EA2A4BED9B002B0213 /* FirstOnboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstOnboarding.swift; sourceTree = "<group>"; };
+		C16F23EC2A4BEDA1002B0213 /* SecondOnboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondOnboarding.swift; sourceTree = "<group>"; };
+		C16F23EE2A4BEDA6002B0213 /* ThirdOnboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdOnboarding.swift; sourceTree = "<group>"; };
+		C16F23F02A4BEDC6002B0213 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -242,6 +250,7 @@
 		65B64F562A4A7A8C00F79350 /* Pages */ = {
 			isa = PBXGroup;
 			children = (
+				C16F23E92A4BED84002B0213 /* Onboarding */,
 				658C97B72A492F9700F4E8A6 /* SimulationFormView.swift */,
 				658C97C32A4BDB4C00F4E8A6 /* InfoSheetView.swift */,
 				658C97BF2A4AB0A300F4E8A6 /* KalkulatorKPRView.swift */,
@@ -261,6 +270,17 @@
 				658C97BB2A4A978800F4E8A6 /* TextFieldView.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		C16F23E92A4BED84002B0213 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				C16F23EA2A4BED9B002B0213 /* FirstOnboarding.swift */,
+				C16F23EC2A4BEDA1002B0213 /* SecondOnboarding.swift */,
+				C16F23EE2A4BEDA6002B0213 /* ThirdOnboarding.swift */,
+				C16F23F02A4BEDC6002B0213 /* OnboardingView.swift */,
+			);
+			path = Onboarding;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -395,11 +415,14 @@
 			files = (
 				65B64F582A4A7A9C00F79350 /* Main.swift in Sources */,
 				65B64F522A43EA0300F79350 /* BankProgram.swift in Sources */,
+				C16F23ED2A4BEDA1002B0213 /* SecondOnboarding.swift in Sources */,
 				65B64F492A42949000F79350 /* FullWidth.swift in Sources */,
 				9CA9AFFB2A499B8400BFDAA6 /* PlanDataViewModel.swift in Sources */,
 				658C97BC2A4A978800F4E8A6 /* TextFieldView.swift in Sources */,
 				656D11722A3C0B0A00334554 /* MiniTwoApp.swift in Sources */,
+				C16F23EB2A4BED9B002B0213 /* FirstOnboarding.swift in Sources */,
 				658C97C42A4BDB4C00F4E8A6 /* InfoSheetView.swift in Sources */,
+				C16F23EF2A4BEDA6002B0213 /* ThirdOnboarding.swift in Sources */,
 				658C97C02A4AB0A300F4E8A6 /* KalkulatorKPRView.swift in Sources */,
 				65B64F4E2A42966200F79350 /* Plan.swift in Sources */,
 				65B64F5D2A4A838100F79350 /* MainTemplate.swift in Sources */,
@@ -411,6 +434,7 @@
 				658C97B62A487E3800F4E8A6 /* ProgramKPRDetailView.swift in Sources */,
 				658C97B22A487E1B00F4E8A6 /* ProgramKPRView.swift in Sources */,
 				65B64F502A429F5300F79350 /* MockData.swift in Sources */,
+				C16F23F12A4BEDC6002B0213 /* OnboardingView.swift in Sources */,
 				658C97C22A4AB24900F4E8A6 /* SavedKPRView.swift in Sources */,
 				9CA9AFF92A499B3700BFDAA6 /* CoreDataManager.swift in Sources */,
 			);
