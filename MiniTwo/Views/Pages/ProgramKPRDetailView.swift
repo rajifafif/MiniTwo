@@ -7,7 +7,15 @@
 
 import SwiftUI
 
+enum SheetState {
+    case fixed, floating
+}
+
 struct ProgramKPRDetailView: View {
+
+    @ObservedObject var sheetManager = SheetManager.shared
+    @State private var selectedState = SheetState.fixed
+    
     var body: some View {
         VStack(spacing: 12) {
             Text("Fixed 3 Tahun")
@@ -64,11 +72,20 @@ struct ProgramKPRDetailView: View {
             VStack {
                 HStack {
                     Text("Periode Fixed")
+                        .fontWeight(.bold)
+                    
+                    Button(action: {
+                        selectedState = SheetState.fixed
+                        sheetManager.infoIsPresented.toggle()
+                    }, label: {
+                        Image(systemName: "info.circle")
+                    })
+                    
                     Spacer()
                     Text("\(3) tahun")
+                        .fontWeight(.bold)
                 }
                 .font(.body)
-                .fontWeight(.bold)
                 
                 Divider()
                 
@@ -93,11 +110,20 @@ struct ProgramKPRDetailView: View {
             VStack {
                 HStack {
                     Text("Periode Floating")
+                        .fontWeight(.bold)
+                    
+                    Button(action: {
+                        selectedState = SheetState.floating
+                        sheetManager.infoIsPresented.toggle()
+                    }, label: {
+                        Image(systemName: "info.circle")
+                    })
+                    
                     Spacer()
                     Text("\(12) tahun")
+                        .fontWeight(.bold)
                 }
                 .font(.body)
-                .fontWeight(.bold)
                 
                 Divider()
                 
@@ -175,6 +201,32 @@ struct ProgramKPRDetailView: View {
             
         }
         .padding()
+        .sheet(isPresented: $sheetManager.infoIsPresented) {
+            VStack(alignment: .leading, spacing: 15) {
+                switch selectedState {
+                case .fixed:
+                    DescriptionView(title: "Periode Fixed",
+                                    deskripsi: "Periode Fixed adalah periode berlakunya suku bunga fixed yang termasuk dalam tenor pengajuan KPR.")
+                case .floating:
+                    DescriptionView(title: "Periode Floating",
+                                    deskripsi: "Periode Floating adalah periode berlakunya suku bunga tidak tetap yang akan dikenakan oleh bank kepada debitur KPR dari berakhirnya periode  fixed hingga akhir masa kredit.")
+                }
+                
+                Button(action: {
+                    sheetManager.infoIsPresented.toggle()
+                }, label: {
+                    HStack {
+                        Spacer()
+                        Text("Lanjut")
+                            .font(.body.bold())
+                        Spacer()
+                    }
+                })
+                .padding(.top, 5)
+            }
+            .padding()
+            .presentationDetents([.height(215)])
+        }
     }
 }
 
