@@ -11,7 +11,7 @@ struct SimulationFormView: View {
     
     @State private var hargaProperti = 0.0
     @State private var nominalDP = 0.0
-    @State private var masaTenor = 0.0
+    @State private var masaTenor = 10.0
     @State private var gaji = 0.0
     
     @FocusState private var focusedField: FocusedField?
@@ -47,7 +47,7 @@ struct SimulationFormView: View {
                     .font(.largeTitle.bold())
                     .padding(.leading)
                 
-                VStack(spacing: 20) {
+                VStack(alignment: .leading, spacing: 20) {
                     TextFieldView(textFieldType: TextFieldType.hargaProperti,
                                   value: $hargaProperti)
                     .focused($focusedField, equals: .hargaProperti)

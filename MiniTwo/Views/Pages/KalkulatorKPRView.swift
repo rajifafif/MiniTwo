@@ -25,7 +25,7 @@ struct KalkulatorKPRView: View {
                 .fontWeight(.heavy)
                 .padding(.bottom)
             
-            VStack(spacing: 20) {
+            VStack(spacing: 25) {
                 TextFieldView(textFieldType: TextFieldType.hargaProperti,
                               value: $hargaProperti)
                 .focused($focusedField, equals: .hargaProperti)

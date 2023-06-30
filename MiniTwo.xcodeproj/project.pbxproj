@@ -24,7 +24,6 @@
 		658C97C02A4AB0A300F4E8A6 /* KalkulatorKPRView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658C97BF2A4AB0A300F4E8A6 /* KalkulatorKPRView.swift */; };
 		658C97C22A4AB24900F4E8A6 /* SavedKPRView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658C97C12A4AB24900F4E8A6 /* SavedKPRView.swift */; };
 		658C97C42A4BDB4C00F4E8A6 /* InfoSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658C97C32A4BDB4C00F4E8A6 /* InfoSheetView.swift */; };
-		658C97C82A4C0F7500F4E8A6 /* Terminologi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658C97C72A4C0F7500F4E8A6 /* Terminologi.swift */; };
 		65B64F492A42949000F79350 /* FullWidth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B64F482A42949000F79350 /* FullWidth.swift */; };
 		65B64F4E2A42966200F79350 /* Plan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B64F4D2A42966200F79350 /* Plan.swift */; };
 		65B64F502A429F5300F79350 /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B64F4F2A429F5300F79350 /* MockData.swift */; };
@@ -75,7 +74,6 @@
 		658C97BF2A4AB0A300F4E8A6 /* KalkulatorKPRView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KalkulatorKPRView.swift; sourceTree = "<group>"; };
 		658C97C12A4AB24900F4E8A6 /* SavedKPRView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedKPRView.swift; sourceTree = "<group>"; };
 		658C97C32A4BDB4C00F4E8A6 /* InfoSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoSheetView.swift; sourceTree = "<group>"; };
-		658C97C72A4C0F7500F4E8A6 /* Terminologi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Terminologi.swift; sourceTree = "<group>"; };
 		65B64F482A42949000F79350 /* FullWidth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullWidth.swift; sourceTree = "<group>"; };
 		65B64F4D2A42966200F79350 /* Plan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Plan.swift; sourceTree = "<group>"; };
 		65B64F4F2A429F5300F79350 /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
@@ -223,7 +221,6 @@
 				65B64F4D2A42966200F79350 /* Plan.swift */,
 				65B64F512A43EA0300F79350 /* BankProgram.swift */,
 				65B64F532A43EA9900F79350 /* Bank.swift */,
-				658C97C72A4C0F7500F4E8A6 /* Terminologi.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -402,7 +399,6 @@
 				65B64F582A4A7A9C00F79350 /* Main.swift in Sources */,
 				65B64F522A43EA0300F79350 /* BankProgram.swift in Sources */,
 				65B64F492A42949000F79350 /* FullWidth.swift in Sources */,
-				658C97C82A4C0F7500F4E8A6 /* Terminologi.swift in Sources */,
 				9CA9AFFB2A499B8400BFDAA6 /* PlanDataViewModel.swift in Sources */,
 				658C97BC2A4A978800F4E8A6 /* TextFieldView.swift in Sources */,
 				656D11722A3C0B0A00334554 /* MiniTwoApp.swift in Sources */,

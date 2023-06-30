@@ -12,31 +12,26 @@ struct ProgramKPRCardView: View {
     var body: some View {
         VStack {
             HStack {
-                Text("\(3)")
-                    .font(.title3.bold())
-                    .foregroundColor(.white)
-                    .frame(width: 42, height: 42)
-                    .background(.blue)
-                    .cornerRadius(5)
+                Image("cimb")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 70)
+                    .cornerRadius(8)
+                    .padding(.trailing, 10)
                 
-                VStack(alignment: .leading) {
-                    Text("Fixed 3 tahun")
-                        .font(.title3.bold())
-                }
+                Text("Niaga - Fixed 3 tahun")
+                    .font(.title3)
+                    .fontWeight(.bold)
                 
                 Spacer()
-                
-                Image(systemName: "arrow.forward.square")
-                    .font(.title)
-                    
             }
             
             Divider()
             
             HStack {
                 VStack(alignment: .leading) {
-                    Text("Max Floating")
-                    Text("Rp\(12000000)")
+                    Text("Rasio Kredit")
+                    Text("Good")
                         .foregroundColor(.green)
                         .bold()
                 }
@@ -59,7 +54,6 @@ struct ProgramKPRCardView: View {
         }
         .padding()
         .border(Color(UIColor.systemGray4))
-        .padding(.bottom)
     }
 }
 

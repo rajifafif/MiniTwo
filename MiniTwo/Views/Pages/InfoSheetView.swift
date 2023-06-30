@@ -49,7 +49,7 @@ struct InfoSheetView: View {
             }, label: {
                 HStack {
                     Spacer()
-                    Text("Lanjut")
+                    Text("Mengerti")
                         .font(.body.bold())
                     Spacer()
                 }
@@ -57,7 +57,7 @@ struct InfoSheetView: View {
             
         }
         .padding()
-        .presentationDetents([.height(215)])
+        .presentationDetents([.height(235)])
     }
 }
 
