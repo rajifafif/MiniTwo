@@ -30,11 +30,9 @@
 		65B64F542A43EA9900F79350 /* Bank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B64F532A43EA9900F79350 /* Bank.swift */; };
 		65B64F582A4A7A9C00F79350 /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B64F572A4A7A9C00F79350 /* Main.swift */; };
 		65B64F5D2A4A838100F79350 /* MainTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B64F5C2A4A838100F79350 /* MainTemplate.swift */; };
-		9CA1512D2A4E77E5005A0A10 /* BIRateModel.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 9CA1512C2A4E77E5005A0A10 /* BIRateModel.mlmodel */; };
-		9CA1512F2A4E7D16005A0A10 /* BIRateModelLinReg.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 9CA1512E2A4E7D16005A0A10 /* BIRateModelLinReg.mlmodel */; };
-		9CA151362A4E7F08005A0A10 /* BIRateT.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 9CA151352A4E7F08005A0A10 /* BIRateT.mlmodel */; };
 		9CA9AFF92A499B3700BFDAA6 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA9AFF82A499B3700BFDAA6 /* CoreDataManager.swift */; };
 		9CA9AFFB2A499B8400BFDAA6 /* PlanDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CA9AFFA2A499B8400BFDAA6 /* PlanDataViewModel.swift */; };
+		9CFEF6452A4E94FE0042384C /* BIRateModelLinReg.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 9CFEF6442A4E94FE0042384C /* BIRateModelLinReg.mlmodel */; };
 		C16F23EB2A4BED9B002B0213 /* FirstOnboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16F23EA2A4BED9B002B0213 /* FirstOnboarding.swift */; };
 		C16F23ED2A4BEDA1002B0213 /* SecondOnboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16F23EC2A4BEDA1002B0213 /* SecondOnboarding.swift */; };
 		C16F23EF2A4BEDA6002B0213 /* ThirdOnboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16F23EE2A4BEDA6002B0213 /* ThirdOnboarding.swift */; };
@@ -86,11 +84,9 @@
 		65B64F532A43EA9900F79350 /* Bank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bank.swift; sourceTree = "<group>"; };
 		65B64F572A4A7A9C00F79350 /* Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
 		65B64F5C2A4A838100F79350 /* MainTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTemplate.swift; sourceTree = "<group>"; };
-		9CA1512C2A4E77E5005A0A10 /* BIRateModel.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = BIRateModel.mlmodel; path = ../../../../../../BIRateModel.mlmodel; sourceTree = "<group>"; };
-		9CA1512E2A4E7D16005A0A10 /* BIRateModelLinReg.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = BIRateModelLinReg.mlmodel; path = ../../../../../../../Downloads/BIRateModelLinReg.mlmodel; sourceTree = "<group>"; };
-		9CA151352A4E7F08005A0A10 /* BIRateT.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = BIRateT.mlmodel; path = ../../../../../../../Downloads/BIRateT.mlmodel; sourceTree = "<group>"; };
 		9CA9AFF82A499B3700BFDAA6 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		9CA9AFFA2A499B8400BFDAA6 /* PlanDataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanDataViewModel.swift; sourceTree = "<group>"; };
+		9CFEF6442A4E94FE0042384C /* BIRateModelLinReg.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = BIRateModelLinReg.mlmodel; path = ../../../../../../BIRateModelLinReg.mlmodel; sourceTree = "<group>"; };
 		C16F23EA2A4BED9B002B0213 /* FirstOnboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstOnboarding.swift; sourceTree = "<group>"; };
 		C16F23EC2A4BEDA1002B0213 /* SecondOnboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondOnboarding.swift; sourceTree = "<group>"; };
 		C16F23EE2A4BEDA6002B0213 /* ThirdOnboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdOnboarding.swift; sourceTree = "<group>"; };
@@ -282,9 +278,7 @@
 		9CA1512B2A4E77CF005A0A10 /* MLModel */ = {
 			isa = PBXGroup;
 			children = (
-				9CA151352A4E7F08005A0A10 /* BIRateT.mlmodel */,
-				9CA1512E2A4E7D16005A0A10 /* BIRateModelLinReg.mlmodel */,
-				9CA1512C2A4E77E5005A0A10 /* BIRateModel.mlmodel */,
+				9CFEF6442A4E94FE0042384C /* BIRateModelLinReg.mlmodel */,
 			);
 			path = MLModel;
 			sourceTree = "<group>";
@@ -438,11 +432,9 @@
 				658C97BC2A4A978800F4E8A6 /* TextFieldView.swift in Sources */,
 				656D11722A3C0B0A00334554 /* MiniTwoApp.swift in Sources */,
 				C16F23EB2A4BED9B002B0213 /* FirstOnboarding.swift in Sources */,
-				9CA1512D2A4E77E5005A0A10 /* BIRateModel.mlmodel in Sources */,
 				658C97C42A4BDB4C00F4E8A6 /* InfoSheetView.swift in Sources */,
 				C16F23EF2A4BEDA6002B0213 /* ThirdOnboarding.swift in Sources */,
 				658C97C02A4AB0A300F4E8A6 /* KalkulatorKPRView.swift in Sources */,
-				9CA1512F2A4E7D16005A0A10 /* BIRateModelLinReg.mlmodel in Sources */,
 				65B64F4E2A42966200F79350 /* Plan.swift in Sources */,
 				65B64F5D2A4A838100F79350 /* MainTemplate.swift in Sources */,
 				658C97B82A492F9700F4E8A6 /* SimulationFormView.swift in Sources */,
@@ -455,7 +447,7 @@
 				65B64F502A429F5300F79350 /* MockData.swift in Sources */,
 				C16F23F12A4BEDC6002B0213 /* OnboardingView.swift in Sources */,
 				658C97C22A4AB24900F4E8A6 /* SavedKPRView.swift in Sources */,
-				9CA151362A4E7F08005A0A10 /* BIRateT.mlmodel in Sources */,
+				9CFEF6452A4E94FE0042384C /* BIRateModelLinReg.mlmodel in Sources */,
 				9CA9AFF92A499B3700BFDAA6 /* CoreDataManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
