@@ -8,17 +8,58 @@
 import SwiftUI
 
 struct ProgramKPRView: View {
+    
+    @State private var isComparing = true
+    
     var body: some View {
-        ScrollView() {
-            Text("Program KPR")
-                .font(.title2)
-                .fontWeight(.heavy)
-            ForEach(0...10, id: \.self) { _ in
-                ProgramKPRCardView()
+        NavigationStack {
+            ZStack {
+                Rectangle()
+                    .fill(.blue.opacity(0.1))
+                    .ignoresSafeArea()
+                    .frame(height: 130)
+                
+                HStack {
+                    Image(systemName: "dollarsign.circle")
+                        .resizable()
+                        .scaledToFit()
+                        .foregroundColor(.blue)
+                        .fontWeight(.semibold)
+                        .frame(width: 40)
+                        .padding(10)
+                        .background(.blue.opacity(0.15))
+                        .cornerRadius(10)
+                    VStack(alignment: .leading, spacing: 6) {
+                        Text("KPR Bank")
+                            .font(.body.bold())
+                        Text("Beberapa pilihan pembayaran berikut adalah program dari Bank penyedia KPR.")
+                            .font(.caption)
+                    }
+                }
+                .padding()
+                .background(.white)
+                .cornerRadius(10)
+                .padding(10)
+                .listRowSeparator(.hidden)
             }
+            
+            List {
+                ForEach(0...10, id: \.self) { _ in
+                    ProgramKPRCardView()
+                }
+                .listRowSeparator(.hidden)
+            }
+            .navigationTitle("Program KPR")
+            .toolbar {
+                Button(action: {
+                    isComparing.toggle()
+                }, label: {
+                    Text("Bandingkan")
+                        .foregroundColor(isComparing == true ? .gray : .blue)
+                })
+            }
+            .listStyle(.plain)
         }
-        .padding()
-        .edgesIgnoringSafeArea(.bottom)
     }
 }
 

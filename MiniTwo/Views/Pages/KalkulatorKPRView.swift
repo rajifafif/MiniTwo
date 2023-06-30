@@ -9,12 +9,14 @@ import SwiftUI
 
 struct KalkulatorKPRView: View {
     
-    @State private var hargaProperti = ""
-    @State private var uangMuka = ""
-    @State private var tenor = ""
-    @State private var sukuBungaFixed = ""
-    @State private var masaBungaFixed = ""
-    @State private var sukuBungaFloating = ""
+    @State private var hargaProperti = 0.0
+    @State private var uangMuka = 0.0
+    @State private var tenor = 0.0
+    @State private var sukuBungaFixed = 0.0
+    @State private var periodeBungaFixed = 0.0
+    @State private var sukuBungaFloating = 0.0
+    
+    @FocusState private var focusedField: FocusedField?
     
     var body: some View {
         VStack {
@@ -23,30 +25,30 @@ struct KalkulatorKPRView: View {
                 .fontWeight(.heavy)
                 .padding(.bottom)
             
-            VStack(spacing: 20) {
-                TextFieldView(title: "Harga Properti",
-                              placeholder: "Rp1.000.000.000",
-                              text: $hargaProperti)
+            VStack(spacing: 25) {
+                TextFieldView(textFieldType: TextFieldType.hargaProperti,
+                              value: $hargaProperti)
+                .focused($focusedField, equals: .hargaProperti)
                 
-                TextFieldView(title: "Uang Muka",
-                              placeholder: "Rp100.000.000",
-                              text: $uangMuka)
+                TextFieldView(textFieldType: TextFieldType.uangMuka,
+                              value: $uangMuka)
+                .focused($focusedField, equals: .uangMuka)
                 
-                TextFieldView(title: "Tenor",
-                              placeholder: "10 tahun",
-                              text: $tenor)
+                TextFieldView(textFieldType: TextFieldType.tenor,
+                              value: $tenor)
+                .focused($focusedField, equals: .tenor)
                 
-                TextFieldView(title: "Suku Bunga Fixed",
-                              placeholder: "Rp10.000.000",
-                              text: $sukuBungaFixed)
+                TextFieldView(textFieldType: TextFieldType.sukuBungaFixed,
+                              value: $sukuBungaFixed)
+                .focused($focusedField, equals: .sukuBungaFixed)
                 
-                TextFieldView(title: "Masa Bunga Fixed",
-                              placeholder: "3 tahun",
-                              text: $masaBungaFixed)
+                TextFieldView(textFieldType: TextFieldType.periodeBungaFixed,
+                              value: $periodeBungaFixed)
+                .focused($focusedField, equals: .periodeBungaFixed)
                 
-                TextFieldView(title: "Suku Bunga Floating",
-                              placeholder: "13.5%",
-                              text: $sukuBungaFloating)
+                TextFieldView(textFieldType: TextFieldType.sukuBungaFloating,
+                              value: $sukuBungaFloating)
+                .focused($focusedField, equals: .sukuBungaFloating)
             }
             
             Button(action: {

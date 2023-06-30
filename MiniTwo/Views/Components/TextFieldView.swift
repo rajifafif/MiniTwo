@@ -7,37 +7,109 @@
 
 import SwiftUI
 
-struct TextFieldView: View {
+enum TextFieldType: String {
+    case hargaProperti = "Harga properti"
+    case uangMuka = "Uang muka"
+    case tenor = "Tenor (tahun)"
+    case gaji = "Gaji saat ini"
+    case sukuBungaFixed = "Suku bunga fixed"
+    case periodeBungaFixed = "Periode bunga fixed (tahun)"
+    case sukuBungaFloating = "Suku bunga floating"
+}
 
-    var title: String
-    var placeholder: String
-    @Binding var text: String
+enum FocusedField {
+    case hargaProperti
+    case uangMuka
+    case tenor
+    case gaji
+    case sukuBungaFixed
+    case periodeBungaFixed
+    case sukuBungaFloating
+}
+
+struct TextFieldView: View {
     
-    @ObservedObject var sheetStateManager = SheetStateManager.shared
+    var textFieldType: TextFieldType
+    @Binding var value: Double
+    
+    @ObservedObject var sheetManager = SheetManager.shared
     
     var body: some View {
         VStack(alignment: .leading) {
             HStack(alignment: .center) {
-                Text(title)
+                Text(textFieldType.rawValue)
+                    .foregroundColor(.black)
+                    .font(.body)
                 Button(action: {
-                    sheetStateManager.isPresented.toggle()
+                    sheetManager.textFieldType = textFieldType
+                    sheetManager.infoIsPresented.toggle()
                 }, label: {
                     Image(systemName: "info.circle")
                 })
             }
-            TextField(placeholder, text: $text)
-                .padding(.all, 12)
-                .frame(width: UIScreen.main.bounds.width - 35)
-                .background(Color(UIColor.systemGray5))
-                .cornerRadius(5)
+            
+            switch textFieldType {
+            case .hargaProperti:
+                TextField("IDR 1,000,000,000",
+                          value: $value,
+                          format: .currency(code: "IDR"))
+                .keyboardType(.decimalPad)
+                .textFieldStyle()
+                
+            case .uangMuka:
+                TextField("IDR 100,000,000",
+                          value: $value,
+                          format: .currency(code: "IDR"))
+                .keyboardType(.decimalPad)
+                .textFieldStyle()
+                
+            case .tenor:
+                TextField("10",
+                          value: $value,
+                          format: .number)
+                .keyboardType(.numberPad)
+                .textFieldStyle()
+                
+            case .gaji:
+                TextField("IDR 10,000,000",
+                          value: $value,
+                          format: .currency(code: "IDR"))
+                .keyboardType(.decimalPad)
+                .textFieldStyle()
+                
+            case .sukuBungaFixed:
+                TextField("IDR 8,000,000",
+                          value: $value,
+                          format: .currency(code: "IDR"))
+                .keyboardType(.decimalPad)
+                .textFieldStyle()
+                
+            case .periodeBungaFixed:
+                TextField("10",
+                          value: $value,
+                          format: .number)
+                .keyboardType(.numberPad)
+                .textFieldStyle()
+                
+            case .sukuBungaFloating:
+                TextField("IDR 100,000,000",
+                          value: $value,
+                          format: .percent)
+                .keyboardType(.decimalPad)
+                .textFieldStyle()
+                
+            }
+        }
+        .sheet(isPresented: $sheetManager.infoIsPresented) {
+            InfoSheetView(textFieldType: sheetManager.textFieldType)
+                .preferredColorScheme(.light)
         }
     }
 }
 
 struct TextFieldView_Previews: PreviewProvider {
     static var previews: some View {
-        TextFieldView(title: "Gaji saat ini",
-                      placeholder: "Rp10.000.000",
-                      text: .constant(""))
+        TextFieldView(textFieldType: TextFieldType.hargaProperti,
+                      value: .constant(1000000000.0))
     }
 }
