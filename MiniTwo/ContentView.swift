@@ -15,31 +15,34 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView {
-            List {
-                ForEach(planDataViewModel.savedPlanEntities) { plan in
-                    NavigationLink {
-                        VStack {
+            VStack {
+                Text("\(planDataViewModel.predictBIRate(2031))")
+                List {
+                    ForEach(planDataViewModel.savedPlanEntities) { plan in
+                        NavigationLink {
+                            VStack {
+                                Text(plan.name!)
+                                Text("\(plan.propertyPrice)")
+                            }
+                        } label: {
                             Text(plan.name!)
-                            Text("\(plan.propertyPrice)")
                         }
-                    } label: {
-                        Text(plan.name!)
-                    }
 
-                }
-                .onDelete(perform: planDataViewModel.deletePlan)
-            }
-            .toolbar {
-#if os(iOS)
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
-                }
-#endif
-                ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
                     }
+                    .onDelete(perform: planDataViewModel.deletePlan)
                 }
+                .toolbar {
+    #if os(iOS)
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        EditButton()
+                    }
+    #endif
+                    ToolbarItem {
+                        Button(action: addItem) {
+                            Label("Add Item", systemImage: "plus")
+                        }
+                    }
+            }
             }
             Text("Select a plan")
         }
