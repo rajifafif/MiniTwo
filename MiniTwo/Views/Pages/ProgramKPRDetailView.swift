@@ -19,10 +19,108 @@ struct ProgramKPRDetailView: View {
     var body: some View {
         NavigationStack {
             VStack(spacing: 12) {
+                ZStack {
+                    Rectangle()
+                        .fill(.blue.opacity(0.1))
+                        .ignoresSafeArea()
+                    
+                    ProgramKPRCardView()
+                        .padding(.horizontal)
+                }
                 
-                Text("Hasil simulasi KPR hanya estimasi sebagai acuan. Hubungi Bank pilihan anda untuk konsultasi pembiayaan.")
-               
-                ProgramKPRCardView()
+                HStack {
+                    Spacer()
+                    Text("Hasil simulasi KPR hanya estimasi sebagai acuan. Hubungi Bank pilihan Anda untuk konsultasi pembiayaan.")
+                        .font(.body)
+                        .foregroundColor(Color(red: 178/255, green: 78/255, blue: 78/255))
+                    Spacer()
+                }
+                .padding(.vertical, 10)
+                .background(.yellow.opacity(0.1))
+                .cornerRadius(8)
+                .padding(.horizontal)
+                
+                VStack {
+                    HStack {
+                        Text("Angsuran Periode Fixed")
+                            .fontWeight(.bold)
+                        
+                        Button(action: {
+                            selectedState = SheetState.fixed
+                            sheetManager.infoIsPresented.toggle()
+                        }, label: {
+                            Image(systemName: "info.circle")
+                        })
+                        
+                        Spacer()
+                        Text(String(3.99) + "%")
+                            .fontWeight(.bold)
+                    }
+                    .font(.body)
+                    
+                    Divider()
+                    
+                    VStack(spacing: 4) {
+                        HStack {
+                            Text("Nilai Angsuran")
+                            Spacer()
+                            Text("Rp\(7000000) / bulan")
+                                .fontWeight(.bold)
+                        }
+                        
+                        HStack {
+                            Text("Periode Tahun")
+                            Spacer()
+                            Text("1 - 3")
+                                .fontWeight(.bold)
+                        }
+                    }
+                    .font(.body)
+                }
+                .padding()
+                .border(Color(UIColor.systemGray4))
+                .padding(.horizontal)
+                
+                VStack {
+                    HStack {
+                        Text("Angsuran Periode Floating")
+                            .fontWeight(.bold)
+                        
+                        Button(action: {
+                            selectedState = SheetState.floating
+                            sheetManager.infoIsPresented.toggle()
+                        }, label: {
+                            Image(systemName: "info.circle")
+                        })
+                        
+                        Spacer()
+                        Text(String(13.5) + "%")
+                            .fontWeight(.bold)
+                    }
+                    .font(.body)
+                    
+                    Divider()
+                    
+                    VStack(spacing: 4) {
+                        HStack {
+                            Text("Nilai Angsuran")
+                            Spacer()
+                            Text("Rp\(12000000) / bulan")
+                                .fontWeight(.bold)
+                        }
+                        
+                        HStack {
+                            Text("Periode Tahun")
+                            Spacer()
+                            Text("4 - 15")
+                                .fontWeight(.bold)
+                        }
+                    }
+                    .font(.body)
+                }
+                .padding()
+                .border(Color(UIColor.systemGray4))
+                .padding(.horizontal)
                 
                 VStack {
                     HStack {
@@ -35,12 +133,6 @@ struct ProgramKPRDetailView: View {
                     Divider()
                     
                     VStack(spacing: 4) {
-                        HStack {
-                            Text("Pemasukan")
-                            Spacer()
-                            Text("Rp\(36000000) / bulan")
-                        }
-                        
                         HStack {
                             Text("Plafon pinjaman")
                             Spacer()
@@ -69,86 +161,7 @@ struct ProgramKPRDetailView: View {
                 }
                 .padding()
                 .border(Color(UIColor.systemGray4))
-                
-                VStack {
-                    HStack {
-                        Text("Periode Fixed")
-                            .fontWeight(.bold)
-                        
-                        Button(action: {
-                            selectedState = SheetState.fixed
-                            sheetManager.infoIsPresented.toggle()
-                        }, label: {
-                            Image(systemName: "info.circle")
-                        })
-                        
-                        Spacer()
-                        Text("\(3) tahun")
-                            .fontWeight(.bold)
-                    }
-                    .font(.body)
-                    
-                    Divider()
-                    
-                    VStack(spacing: 4) {
-                        HStack {
-                            Text("Rate")
-                            Spacer()
-                            Text(String(3.99) + "%")
-                        }
-                        
-                        HStack {
-                            Text("Nilai Cicilan")
-                            Spacer()
-                            Text("Rp\(7000000) / bulan")
-                        }
-                    }
-                    .font(.body)
-                }
-                .padding()
-                .border(Color(UIColor.systemGray4))
-                
-                VStack {
-                    HStack {
-                        Text("Periode Floating")
-                            .fontWeight(.bold)
-                        
-                        Button(action: {
-                            selectedState = SheetState.floating
-                            sheetManager.infoIsPresented.toggle()
-                        }, label: {
-                            Image(systemName: "info.circle")
-                        })
-                        
-                        Spacer()
-                        Text("\(12) tahun")
-                            .fontWeight(.bold)
-                    }
-                    .font(.body)
-                    
-                    Divider()
-                    
-                    VStack(spacing: 4) {
-                        HStack {
-                            Text("Rate")
-                            Spacer()
-                            Text(String(13.5) + "%")
-                                .foregroundColor(.blue)
-                                .bold()
-                        }
-                        
-                        HStack {
-                            Text("Nilai Cicilan")
-                            Spacer()
-                            Text("Rp\(12000000) / bulan")
-                                .foregroundColor(.green)
-                                .bold()
-                        }
-                    }
-                    .font(.body)
-                }
-                .padding()
-                .border(Color(UIColor.systemGray4))
+                .padding(.horizontal)
                 
                 Button(action: {
                     // add action here ngab
@@ -162,11 +175,7 @@ struct ProgramKPRDetailView: View {
                         .background(.blue)
                         .cornerRadius(8)
                 })
-                .padding(.vertical, 10)
-                
-                Spacer()
             }
-            .padding()
             .sheet(isPresented: $sheetManager.infoIsPresented) {
                 VStack(alignment: .leading, spacing: 15) {
                     switch selectedState {

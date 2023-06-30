@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct ProgramKPRView: View {
+    
+    @State private var isComparing = true
+    
     var body: some View {
         NavigationStack {
             ZStack {
@@ -15,7 +18,7 @@ struct ProgramKPRView: View {
                     .fill(.blue.opacity(0.1))
                     .ignoresSafeArea()
                     .frame(height: 130)
-
+                
                 HStack {
                     Image(systemName: "dollarsign.circle")
                         .resizable()
@@ -47,6 +50,14 @@ struct ProgramKPRView: View {
                 .listRowSeparator(.hidden)
             }
             .navigationTitle("Program KPR")
+            .toolbar {
+                Button(action: {
+                    isComparing.toggle()
+                }, label: {
+                    Text("Bandingkan")
+                        .foregroundColor(isComparing == true ? .gray : .blue)
+                })
+            }
             .listStyle(.plain)
         }
     }
