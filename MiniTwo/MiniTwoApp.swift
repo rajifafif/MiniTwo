@@ -9,10 +9,19 @@ import SwiftUI
 
 @main
 struct MiniTwoApp: App {
+    @AppStorage("isSkipOnboarding") var isSkipOnboarding: Bool = false
 
     var body: some Scene {
         WindowGroup {
-            SimulationFormView()
+            if (isSkipOnboarding) {
+                
+                // Go To Main
+                Main()
+            } else {
+                
+                // Onboarding
+                OnboardingView(isSkipOnboarding: $isSkipOnboarding)
+            }
         }
     }
 }
