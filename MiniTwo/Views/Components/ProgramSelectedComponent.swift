@@ -86,7 +86,7 @@ struct ProgramSelectedComponent: View {
                                 .stroke(Color.blue, lineWidth: 2)
                         )
                         .onTapGesture {
-                            compareModel.removePlan(plan: compareModel.programCompared[3])
+                            compareModel.removePlan(plan: compareModel.programCompared[2])
                         }
                         
                     } else {
@@ -115,6 +115,7 @@ struct ProgramSelectedComponent: View {
             }
             .sheet(isPresented: $comparisonSheet) {
                 ComparisonView()
+                    .environmentObject(compareModel)
 //                ComparisonView(compareModel: compareModel)
 //                    .environmentObject(compareModel)
             }

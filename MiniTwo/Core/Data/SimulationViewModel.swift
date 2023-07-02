@@ -51,6 +51,26 @@ class Simulation: ObservableObject {
         
         self.estBiayaSertifikat = biayaBPHTB
     }
+    
+    init(plan: Plan) {
+        self.hargaProperti = plan.propertyPrice
+        self.nominalDP = nominalDP
+        self.masaTenor = masaTenor
+        self.gaji = gaji
+        
+        self.pokok = self.hargaProperti - self.nominalDP
+        self.biayaAkad = self.pokok / 10
+        
+        let biayaProvisi = self.pokok / 100
+        let biayaAdministrasiKredit = self.pokok / 1000
+        let biayaAsuransi = self.pokok / 100 * 3
+        let biayaNotasi = self.pokok / 100 * 2
+        let biayaAppraisal = self.pokok / 100 * 0.75
+        let biayaBPHTB = self.pokok / 100 * 5
+        self.estBiayaAkad = biayaProvisi + biayaAdministrasiKredit + biayaAsuransi + biayaNotasi + biayaAppraisal
+        
+        self.estBiayaSertifikat = biayaBPHTB
+    }
 }
 
 class BankSimulation {

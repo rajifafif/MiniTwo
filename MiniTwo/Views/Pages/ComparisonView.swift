@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ComparisonView: View {
     
-//    @ObservedObject var compareModel: CompareViewModel
+    @EnvironmentObject var compareModel: CompareViewModel
     
     var body: some View {
         NavigationStack {
@@ -26,15 +26,45 @@ struct ComparisonView: View {
                     GeometryReader { geometry in
                         VStack {
                             HStack {
-                                Image("logo-bni")
+                                if (compareModel.programCompared.count > 0) {
+                                    VStack{
+                                        Image(compareModel.programCompared[0].bankProgram?.bank.logo ?? "")
+                                            .resizable()
+                                            .aspectRatio(contentMode: .fit)
+                                            .frame(height: 60)
+                                    }
                                     .frame(width: geometry.size.width / 3)
+                                } else {
+                                    Spacer()
+                                        .frame(width: geometry.size.width / 3)
+                                }
                                 
-                                Image("logo-bni")
+                                if (compareModel.programCompared.count > 1) {
+                                    VStack{
+                                        Image(compareModel.programCompared[1].bankProgram?.bank.logo ?? "")
+                                            .resizable()
+                                            .aspectRatio(contentMode: .fit)
+                                            .frame(height: 60)
+                                    }
                                     .frame(width: geometry.size.width / 3)
+                                } else {
+                                    Spacer()
+                                        .frame(width: geometry.size.width / 3)
+                                }
                             
-                                
-                                Image("logo-bni")
+                                    
+                                if (compareModel.programCompared.count > 2) {
+                                    VStack{
+                                        Image(compareModel.programCompared[2].bankProgram?.bank.logo ?? "")
+                                            .resizable()
+                                            .aspectRatio(contentMode: .fit)
+                                            .frame(height: 60)
+                                    }
                                     .frame(width: geometry.size.width / 3)
+                                } else {
+                                    Spacer()
+                                        .frame(width: geometry.size.width / 3)
+                                }
                             }
                             
                             
@@ -44,14 +74,36 @@ struct ComparisonView: View {
                                     Spacer()
                                 }
                                 HStack {
-                                    Pills(text: "10000000", color: .blue)
+                                    if (compareModel.programCompared.count > 0) {
+                                        VStack{
+                                            Pills(text: "aa", color: .blue)
+                                        }
                                         .frame(width: geometry.size.width / 3)
+                                    } else {
+                                        Spacer()
+                                        .frame(width: geometry.size.width / 3)
+                                    }
                                     
-                                    Pills(text: "100000001", color: .red)
+                                    if (compareModel.programCompared.count > 1) {
+                                        VStack{
+                                            Pills(text: "10000000", color: .red)
+                                        }
                                         .frame(width: geometry.size.width / 3)
-                                    
-                                    Pills(text: "10000000", color: .green)
+                                    } else {
+                                        Spacer()
+                                            .frame(width: geometry.size.width / 3)
+                                    }
+                                
+                                        
+                                    if (compareModel.programCompared.count > 2) {
+                                        VStack{
+                                            Pills(text: "10000000", color: .green)
+                                        }
                                         .frame(width: geometry.size.width / 3)
+                                    } else {
+                                        Spacer()
+                                            .frame(width: geometry.size.width / 3)
+                                    }
                                 }
                             }
                             
@@ -62,14 +114,36 @@ struct ComparisonView: View {
                                     Spacer()
                                 }
                                 HStack {
-                                    Pills(text: "10 Tahun", color: .blue)
+                                    if (compareModel.programCompared.count > 0) {
+                                        VStack{
+                                            Pills(text: "10000000", color: .blue)
+                                        }
                                         .frame(width: geometry.size.width / 3)
+                                    } else {
+                                        Spacer()
+                                            .frame(width: geometry.size.width / 3)
+                                    }
                                     
-                                    Pills(text: "5 Tahun", color: .red)
+                                    if (compareModel.programCompared.count > 1) {
+                                        VStack{
+                                            Pills(text: "10000000", color: .red)
+                                        }
                                         .frame(width: geometry.size.width / 3)
-                                    
-                                    Pills(text: "3 Tahun", color: .green)
+                                    } else {
+                                        Spacer()
+                                            .frame(width: geometry.size.width / 3)
+                                    }
+                                
+                                        
+                                    if (compareModel.programCompared.count > 2) {
+                                        VStack{
+                                            Pills(text: "10000000", color: .green)
+                                        }
                                         .frame(width: geometry.size.width / 3)
+                                    } else {
+                                        Spacer()
+                                            .frame(width: geometry.size.width / 3)
+                                    }
                                 }
                             }
                             
@@ -80,14 +154,36 @@ struct ComparisonView: View {
                                     Spacer()
                                 }
                                 HStack {
-                                    Pills(text: "10000000", color: .blue)
+                                    if (compareModel.programCompared.count > 0) {
+                                        VStack{
+                                            Pills(text: "10000000", color: .blue)
+                                        }
                                         .frame(width: geometry.size.width / 3)
+                                    } else {
+                                        Spacer()
+                                            .frame(width: geometry.size.width / 3)
+                                    }
                                     
-                                    Pills(text: "100000001", color: .red)
+                                    if (compareModel.programCompared.count > 1) {
+                                        VStack{
+                                            Pills(text: "10000000", color: .red)
+                                        }
                                         .frame(width: geometry.size.width / 3)
-                                    
-                                    Pills(text: "10000000", color: .green)
+                                    } else {
+                                        Spacer()
+                                            .frame(width: geometry.size.width / 3)
+                                    }
+                                
+                                        
+                                    if (compareModel.programCompared.count > 2) {
+                                        VStack{
+                                            Pills(text: "10000000", color: .green)
+                                        }
                                         .frame(width: geometry.size.width / 3)
+                                    } else {
+                                        Spacer()
+                                            .frame(width: geometry.size.width / 3)
+                                    }
                                 }
                             }
                             
@@ -99,14 +195,36 @@ struct ComparisonView: View {
                                     Spacer()
                                 }
                                 HStack {
-                                    Pills(text: "10 Tahun", color: .blue)
+                                    if (compareModel.programCompared.count > 0) {
+                                        VStack{
+                                            Pills(text: "10000000", color: .blue)
+                                        }
                                         .frame(width: geometry.size.width / 3)
+                                    } else {
+                                        Spacer()
+                                            .frame(width: geometry.size.width / 3)
+                                    }
                                     
-                                    Pills(text: "5 Tahun", color: .red)
+                                    if (compareModel.programCompared.count > 1) {
+                                        VStack{
+                                            Pills(text: "10000000", color: .red)
+                                        }
                                         .frame(width: geometry.size.width / 3)
-                                    
-                                    Pills(text: "3 Tahun", color: .green)
+                                    } else {
+                                        Spacer()
+                                            .frame(width: geometry.size.width / 3)
+                                    }
+                                
+                                        
+                                    if (compareModel.programCompared.count > 2) {
+                                        VStack{
+                                            Pills(text: "10000000", color: .green)
+                                        }
                                         .frame(width: geometry.size.width / 3)
+                                    } else {
+                                        Spacer()
+                                            .frame(width: geometry.size.width / 3)
+                                    }
                                 }
                             }
                             
@@ -117,14 +235,36 @@ struct ComparisonView: View {
                                     Spacer()
                                 }
                                 HStack {
-                                    Pills(text: "10000000", color: .blue)
+                                    if (compareModel.programCompared.count > 0) {
+                                        VStack{
+                                            Pills(text: "10000000", color: .blue)
+                                        }
                                         .frame(width: geometry.size.width / 3)
+                                    } else {
+                                        Spacer()
+                                            .frame(width: geometry.size.width / 3)
+                                    }
                                     
-                                    Pills(text: "100000001", color: .red)
+                                    if (compareModel.programCompared.count > 1) {
+                                        VStack{
+                                            Pills(text: "10000000", color: .red)
+                                        }
                                         .frame(width: geometry.size.width / 3)
-                                    
-                                    Pills(text: "10000000", color: .green)
+                                    } else {
+                                        Spacer()
+                                            .frame(width: geometry.size.width / 3)
+                                    }
+                                
+                                        
+                                    if (compareModel.programCompared.count > 2) {
+                                        VStack{
+                                            Pills(text: "10000000", color: .green)
+                                        }
                                         .frame(width: geometry.size.width / 3)
+                                    } else {
+                                        Spacer()
+                                            .frame(width: geometry.size.width / 3)
+                                    }
                                 }
                             }
                         }
@@ -153,6 +293,7 @@ struct ComparisonView: View {
 struct ComparisonView_Previews: PreviewProvider {
     static var previews: some View {
         ComparisonView()
+            .environmentObject(CompareViewModel())
 //        ComparisonView()
 //            .environmentObject(compareModel)
         
