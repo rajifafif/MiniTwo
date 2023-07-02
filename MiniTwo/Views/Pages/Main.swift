@@ -11,13 +11,28 @@ struct Main: View {
     @State private var opacity: Double = 0
     
     var body: some View {
-        MainTemplate(currentPage: .constant("add")){
-            Text("Main Page")
-        }
-        .opacity(opacity)
-        .onAppear {
-            withAnimation(.easeInOut(duration: 1.2)) {
-                opacity = 1
+        GeometryReader { geometry in
+            MainTemplate(currentPage: .constant("add")) {
+                VStack(spacing: 10) {
+                    Image("home3d 3 1")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(maxWidth: geometry.size.width * 0.8)
+                    
+                    Text("Program KPR masih kosong")
+                        .font(.title2)
+                        .fontWeight(.bold)
+                    
+                    Text("Tekan tombol plus untuk mendapatkan program KPR")
+                        .font(.body)
+                        .multilineTextAlignment(.center)
+                }
+            }
+            .opacity(opacity)
+            .onAppear {
+                withAnimation(.easeInOut(duration: 1.2)) {
+                    opacity = 1
+                }
             }
         }
     }
