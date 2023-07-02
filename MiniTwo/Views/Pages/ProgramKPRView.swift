@@ -15,35 +15,48 @@ struct ProgramKPRView: View {
     
     @State private var isComparing = true
     
+    @StateObject var compareModel = CompareViewModel()
+    
     var body: some View {
         NavigationStack {
-            ScrollView{
-                VStack(spacing: 15) {
-                    ForEach(programs, id: \.id) { program in
-                        ProgramKPRCardView(bankSimulation: BankSimulation(
-                            bankProgram: program,
-                            simulation: Simulation(
-                                hargaProperti: simulation.hargaProperti,
-                                nominalDP: simulation.nominalDP,
-                                masaTenor: simulation.masaTenor,
-                                gaji: simulation.gaji
-                            ))
-                        )
+            ZStack{
+                ScrollView{
+                    VStack(spacing: 15) {
+                        ForEach(programs, id: \.id) { program in
+                            ProgramKPRCardView(bankSimulation: BankSimulation(
+                                bankProgram: program,
+                                simulation: Simulation(
+                                    hargaProperti: simulation.hargaProperti,
+                                    nominalDP: simulation.nominalDP,
+                                    masaTenor: simulation.masaTenor,
+                                    gaji: simulation.gaji
+                                ))
+                            )
+                            .onTapGesture {
+                                compareModel.addProgram(
+                                    plan: Plan(
+                                        name: "Yeet",
+                                        propertyPrice: Decimal(simulation.hargaProperti),
+                                        tenor: Int(simulation.masaTenor),
+                                        bankProgram: program
+                                    )
+                                )
+                            }
+                        }
+                        
                     }
-
+                    .navigationTitle("Program KPR")
+                    .padding(.horizontal)
                 }
-                .navigationTitle("Program KPR")
-                .padding(.horizontal)
+                
+                VStack{
+                    Spacer()
+                    
+                    ProgramSelectedComponent(compareModel: compareModel)
+//                        .environmentObject(compareModel)
+                }
             }
-//            .toolbar {
-//                Button(action: {
-//                    isComparing.toggle()
-//                }, label: {
-//                    Text("Bandingkan")
-//                        .foregroundColor(isComparing == true ? .gray : .blue)
-//                })
-//            }
-//                .listStyle(.plain)
+            
         }
         .onAppear{
             programs = MockData.bankPrograms

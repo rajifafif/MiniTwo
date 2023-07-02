@@ -20,11 +20,11 @@ struct ProgramKPRCardView: View {
     
     var body: some View {
         VStack {
-            Button(
-                action: {
-                    detailSheet.toggle()
-                },
-                label: {
+//            Button(
+//                action: {
+//                    detailSheet.toggle()
+//                },
+//                label: {
                     HStack {
                         Image(bankSimulation.bankProgram.bank.logo)
                             .resizable()
@@ -40,7 +40,7 @@ struct ProgramKPRCardView: View {
                         
                         Spacer()
                     }
-            })
+//            }) // End of Button Label
             
             Divider()
             

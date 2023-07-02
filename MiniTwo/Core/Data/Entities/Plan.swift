@@ -19,6 +19,8 @@ class Plan: Identifiable, Equatable {
     
     var pokok: Decimal = 0
     
+    var bankProgram: BankProgram?
+    
     init(
         name: String,
         propertyPrice: Decimal,
@@ -26,7 +28,8 @@ class Plan: Identifiable, Equatable {
         tenor: Int,
         
         fixInterests: [Float] = [],
-        floatingInterests: [Float] = []
+        floatingInterests: [Float] = [],
+        bankProgram: BankProgram?
     ) {
         self.name = name
         self.propertyPrice = propertyPrice
@@ -35,6 +38,8 @@ class Plan: Identifiable, Equatable {
         
         self.fixInterests = fixInterests
         self.floatingInterests = floatingInterests
+        
+        self.bankProgram = bankProgram
         
         self.pokok = self.propertyPrice - (self.downPaymentAmount ?? 0)
     }
