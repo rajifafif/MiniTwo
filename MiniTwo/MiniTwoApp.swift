@@ -9,18 +9,14 @@ import SwiftUI
 
 @main
 struct MiniTwoApp: App {
-    @AppStorage("isSkipOnboarding") var isSkipOnboarding: Bool = false
+    @AppStorage("finishedOnboarding") var finishedOnboarding: Bool = false
 
     var body: some Scene {
         WindowGroup {
-            if (isSkipOnboarding) {
-                
-                // Go To Main
+            if (finishedOnboarding) {
                 Main()
             } else {
-                
-                // Onboarding
-                OnboardingView(isSkipOnboarding: $isSkipOnboarding)
+                KPROnboardingView(finishedOnboarding: $finishedOnboarding)
             }
         }
     }

@@ -20,6 +20,8 @@ class BankProgram: Hashable, Identifiable, Equatable {
     var minTenor: Int?
     var maxTenor: Int?
     
+    var fixDuration: Int
+    
     init(
         name: String,
         bank: Bank,
@@ -29,7 +31,9 @@ class BankProgram: Hashable, Identifiable, Equatable {
         floatingInterests: [Float] = [],
         
         minTenor: Int?,
-        maxTenor: Int?
+        maxTenor: Int?,
+        
+        fixDuration: Int
     ) {
         self.name = name
         self.bank = bank
@@ -39,6 +43,7 @@ class BankProgram: Hashable, Identifiable, Equatable {
         self.floatingInterests = floatingInterests
         self.minTenor = minTenor
         self.maxTenor = maxTenor
+        self.fixDuration = fixDuration
     }
     
     func hash(into hasher: inout Hasher) {
@@ -49,6 +54,7 @@ class BankProgram: Hashable, Identifiable, Equatable {
         hasher.combine(floatingInterests)
         hasher.combine(minTenor)
         hasher.combine(maxTenor)
+        hasher.combine(fixDuration)
     }
 
     static func == (lhs: BankProgram, rhs: BankProgram) -> Bool {
@@ -60,5 +66,6 @@ class BankProgram: Hashable, Identifiable, Equatable {
         && lhs.floatingInterests == rhs.floatingInterests
         && lhs.minTenor == rhs.minTenor
         && lhs.maxTenor == rhs.maxTenor
+        && lhs.fixDuration == rhs.fixDuration
     }
 }

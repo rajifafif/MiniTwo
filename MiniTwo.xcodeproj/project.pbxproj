@@ -16,6 +16,7 @@
 		656D11932A3C0B0B00334554 /* MiniTwoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656D11922A3C0B0B00334554 /* MiniTwoUITests.swift */; };
 		656D11952A3C0B0B00334554 /* MiniTwoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656D11942A3C0B0B00334554 /* MiniTwoUITestsLaunchTests.swift */; };
 		6581D9BC2A4D5F620013136B /* TextFieldStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6581D9BB2A4D5F620013136B /* TextFieldStyle.swift */; };
+		6585DE402A51C81300CD1261 /* KPROnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6585DE3F2A51C81300CD1261 /* KPROnboardingView.swift */; };
 		658C97B22A487E1B00F4E8A6 /* ProgramKPRView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658C97B12A487E1B00F4E8A6 /* ProgramKPRView.swift */; };
 		658C97B42A487E2900F4E8A6 /* ProgramKPRCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658C97B32A487E2900F4E8A6 /* ProgramKPRCardView.swift */; };
 		658C97B62A487E3800F4E8A6 /* ProgramKPRDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 658C97B52A487E3800F4E8A6 /* ProgramKPRDetailView.swift */; };
@@ -71,6 +72,7 @@
 		656D11922A3C0B0B00334554 /* MiniTwoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniTwoUITests.swift; sourceTree = "<group>"; };
 		656D11942A3C0B0B00334554 /* MiniTwoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniTwoUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		6581D9BB2A4D5F620013136B /* TextFieldStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldStyle.swift; sourceTree = "<group>"; };
+		6585DE3F2A51C81300CD1261 /* KPROnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KPROnboardingView.swift; sourceTree = "<group>"; };
 		658C97B12A487E1B00F4E8A6 /* ProgramKPRView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramKPRView.swift; sourceTree = "<group>"; };
 		658C97B32A487E2900F4E8A6 /* ProgramKPRCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramKPRCardView.swift; sourceTree = "<group>"; };
 		658C97B52A487E3800F4E8A6 /* ProgramKPRDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgramKPRDetailView.swift; sourceTree = "<group>"; };
@@ -285,6 +287,7 @@
 				C16F23EC2A4BEDA1002B0213 /* SecondOnboarding.swift */,
 				C16F23EE2A4BEDA6002B0213 /* ThirdOnboarding.swift */,
 				C16F23F02A4BEDC6002B0213 /* OnboardingView.swift */,
+				6585DE3F2A51C81300CD1261 /* KPROnboardingView.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -435,6 +438,7 @@
 				65B64F4E2A42966200F79350 /* Plan.swift in Sources */,
 				65B64F5D2A4A838100F79350 /* MainTemplate.swift in Sources */,
 				658C97B82A492F9700F4E8A6 /* SimulationFormView.swift in Sources */,
+				6585DE402A51C81300CD1261 /* KPROnboardingView.swift in Sources */,
 				656D11772A3C0B0A00334554 /* MiniTwo.xcdatamodeld in Sources */,
 				658C97B42A487E2900F4E8A6 /* ProgramKPRCardView.swift in Sources */,
 				656D11792A3C0B0A00334554 /* ContentView.swift in Sources */,
