@@ -9,6 +9,10 @@ import SwiftUI
 
 struct ProgramKPRView: View {
     
+    @EnvironmentObject var simulation: SimulationViewModel
+    
+    @State var programs: [BankProgram] = []
+    
     @State private var isComparing = true
     
     var body: some View {
@@ -42,23 +46,37 @@ struct ProgramKPRView: View {
                 .padding(10)
                 .listRowSeparator(.hidden)
             }
-            
-            List {
-                ForEach(0...10, id: \.self) { _ in
-                    ProgramKPRCardView()
-                }
-                .listRowSeparator(.hidden)
-            }
             .navigationTitle("Program KPR")
-            .toolbar {
-                Button(action: {
-                    isComparing.toggle()
-                }, label: {
-                    Text("Bandingkan")
-                        .foregroundColor(isComparing == true ? .gray : .blue)
-                })
+            
+            VStack {
+                ForEach(programs, id: \.id) { program in
+                    ProgramKPRCardView(bankSimulation: BankSimulation(
+                        bankProgram: program,
+                        simulation: Simulation(
+                            hargaProperti: simulation.hargaProperti,
+                            nominalDP: simulation.nominalDP,
+                            masaTenor: simulation.masaTenor,
+                            gaji: simulation.gaji
+                        ))
+                    )
+                }
+//                    .listRowSeparator(.hidden)
             }
-            .listStyle(.plain)
+//            .toolbar {
+//                Button(action: {
+//                    isComparing.toggle()
+//                }, label: {
+//                    Text("Bandingkan")
+//                        .foregroundColor(isComparing == true ? .gray : .blue)
+//                })
+//            }
+//                .listStyle(.plain)
+            .padding(.horizontal)
+            
+            Spacer()
+        }
+        .onAppear{
+            programs = MockData.bankPrograms
         }
     }
 }
@@ -66,5 +84,6 @@ struct ProgramKPRView: View {
 struct ProgramKPRView_Previews: PreviewProvider {
     static var previews: some View {
         ProgramKPRView()
+            .environmentObject(SimulationViewModel())
     }
 }

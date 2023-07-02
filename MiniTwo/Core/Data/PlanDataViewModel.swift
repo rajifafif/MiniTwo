@@ -30,7 +30,7 @@ class PlanDataViewModel: ObservableObject {
     func addPlan(plan: Plan) {
         let newPlan = PlanEntity(context: coreDataManager.context)
         newPlan.name = plan.name
-        newPlan.propertyPrice = plan.propertyPrice
+        newPlan.propertyPrice = (plan.propertyPrice) as NSDecimalNumber
         newPlan.tenor = Int32(plan.tenor)
         
         saveData()

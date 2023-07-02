@@ -52,14 +52,16 @@ struct TextFieldView: View {
             case .hargaProperti:
                 TextField("IDR 1,000,000,000",
                           value: $value,
-                          format: .currency(code: "IDR"))
-                .keyboardType(.decimalPad)
+                          format: .number)
+//                            format: .currency(code: "IDR"))
+//                .keyboardType(.decimalPad)
                 .textFieldStyle()
                 
             case .uangMuka:
                 TextField("IDR 100,000,000",
                           value: $value,
-                          format: .currency(code: "IDR"))
+                          format: .number)
+//                            format: .currency(code: "IDR"))
                 .keyboardType(.decimalPad)
                 .textFieldStyle()
                 
@@ -67,20 +69,23 @@ struct TextFieldView: View {
                 TextField("10",
                           value: $value,
                           format: .number)
+//                            format: .currency(code: "IDR"))
                 .keyboardType(.numberPad)
                 .textFieldStyle()
                 
             case .gaji:
                 TextField("IDR 10,000,000",
                           value: $value,
-                          format: .currency(code: "IDR"))
+                          format: .number)
+//                            format: .currency(code: "IDR"))
                 .keyboardType(.decimalPad)
                 .textFieldStyle()
                 
             case .sukuBungaFixed:
                 TextField("IDR 8,000,000",
                           value: $value,
-                          format: .currency(code: "IDR"))
+                          format: .number)
+//                            format: .currency(code: "IDR"))
                 .keyboardType(.decimalPad)
                 .textFieldStyle()
                 

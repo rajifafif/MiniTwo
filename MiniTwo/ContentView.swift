@@ -20,7 +20,7 @@ struct ContentView: View {
                     NavigationLink {
                         VStack {
                             Text(plan.name!)
-                            Text("\(plan.propertyPrice)")
+                            Text("\(plan.propertyPrice ?? 0)")
                         }
                     } label: {
                         Text(plan.name!)
@@ -47,7 +47,7 @@ struct ContentView: View {
     
     private func addItem() {
         withAnimation {
-            let newPlan = Plan(name: "test\(temp)", propertyPrice: Int32(200*temp), tenor: 120)
+            let newPlan = Plan(name: "test\(temp)", propertyPrice: Decimal(200*temp), tenor: 120)
             do {
                 try planDataViewModel.addPlan(plan: newPlan)
             } catch {

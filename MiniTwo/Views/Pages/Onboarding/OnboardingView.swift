@@ -52,7 +52,6 @@ struct OnboardingView: View {
                 .clipShape(Capsule())
 
             }
-
                             
         }
         

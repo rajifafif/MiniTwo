@@ -12,23 +12,33 @@ struct ProgramKPRCardView: View {
     var angsuran = 10_000_000
     var pemasukan = 15_000_000
     
-    @ObservedObject var sheetManager = SheetManager.shared
+    @State var bankSimulation: BankSimulation
+    
+//    @ObservedObject var sheetManager = SheetManager.shared
+    @State var rasioKreditSheet = false
+    @State var detailSheet = false
     
     var body: some View {
         VStack {
-            HStack {
-                Image("cimb")
-                    .resizable()
-                    .frame(width: 60, height: 43)
-                    .cornerRadius(8)
-                    .padding(.trailing, 10)
-                
-                Text("Niaga - Fixed 3 tahun")
-                    .font(.title3)
-                    .fontWeight(.bold)
-                
-                Spacer()
-            }
+            Button(
+                action: {
+                    detailSheet.toggle()
+                },
+                label: {
+                    HStack {
+                        Image(bankSimulation.bankProgram.bank.logo)
+                            .resizable()
+                            .frame(width: 60, height: 43)
+                            .cornerRadius(8)
+                            .padding(.trailing, 10)
+                        
+                        Text("\(bankSimulation.bankProgram.name)")
+                            .font(.title3)
+                            .fontWeight(.bold)
+                        
+                        Spacer()
+                    }
+            })
             
             Divider()
             
@@ -37,7 +47,7 @@ struct ProgramKPRCardView: View {
                     HStack {
                         Text("Rasio Kredit")
                         Button(action: {
-                            sheetManager.infoIsPresented.toggle()
+                            rasioKreditSheet.toggle()
                         }, label: {
                             Image(systemName: "info.circle")
                                 .foregroundColor(.blue)
@@ -70,7 +80,7 @@ struct ProgramKPRCardView: View {
         .padding()
         .background(.white)
         .border(Color(UIColor.systemGray4))
-        .sheet(isPresented: $sheetManager.infoIsPresented) {
+        .sheet(isPresented: $rasioKreditSheet) {
             VStack(alignment: .leading, spacing: 15) {
                 Text("Rasio Kredit")
                     .font(.title3.bold())
@@ -105,7 +115,7 @@ struct ProgramKPRCardView: View {
                 }
                 
                 Button(action: {
-                    sheetManager.infoIsPresented = false
+                    rasioKreditSheet = false
                 }, label: {
                     HStack {
                         Spacer()
@@ -117,6 +127,9 @@ struct ProgramKPRCardView: View {
             }
             .padding()
             .presentationDetents([.height(335)])
+        }
+        .sheet(isPresented: $detailSheet) {
+            ProgramKPRDetailView(bankSimulation: bankSimulation)
         }
         
     }
@@ -137,7 +150,7 @@ struct RasioKreditView: View {
 
 struct ProgramKPRCardView_Previews: PreviewProvider {
     static var previews: some View {
-        ProgramKPRCardView()
+        ProgramKPRCardView(bankSimulation: BankSimulation(bankProgram: MockData.bankPrograms[0], simulation: Simulation(hargaProperti: 1000000, nominalDP: 0, masaTenor: 10, gaji: 0)))
             .padding()
     }
 }

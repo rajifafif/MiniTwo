@@ -7,7 +7,7 @@
 
 import Foundation
 
-class BankProgram: Identifiable, Equatable {
+class BankProgram: Hashable, Identifiable, Equatable {
     let id: String = UUID().uuidString
     
     var name: String
@@ -39,6 +39,16 @@ class BankProgram: Identifiable, Equatable {
         self.floatingInterests = floatingInterests
         self.minTenor = minTenor
         self.maxTenor = maxTenor
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+        hasher.combine(name)
+        hasher.combine(description)
+        hasher.combine(fixInterests)
+        hasher.combine(floatingInterests)
+        hasher.combine(minTenor)
+        hasher.combine(maxTenor)
     }
 
     static func == (lhs: BankProgram, rhs: BankProgram) -> Bool {

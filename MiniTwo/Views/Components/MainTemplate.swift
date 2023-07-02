@@ -18,88 +18,92 @@ struct MainTemplate<Content: View>: View {
         }
     
     var body: some View {
-        ZStack{
-            // Content
-            content()
-            
-            // Nav
-            VStack{
-                Spacer()
+        NavigationView{
+            ZStack{
+                // Content
+                content()
                 
-                ZStack{
+                // Nav
+                VStack{
+                    Spacer()
                     
-                    RoundedRectangle(cornerRadius: 50)
-                        .fill(Color("gray-100"))
-                        .frame(height: 50)
-                    
-                    HStack{
-                        Spacer()
+                    ZStack{
                         
-                        VStack{
+                        RoundedRectangle(cornerRadius: 50)
+                            .fill(Color("gray-100"))
+                            .frame(height: 50)
+                        
+                        HStack{
+                            Spacer()
                             
-                            ZStack{
-                                if currentPage == "home" {
-                                    Circle()
-                                        .fill(Color.blue)
-                                        .frame(width: 75)
-                                    Image(systemName: "house.fill")
-                                        .font(.system(size: 27))
-                                        .foregroundColor(.white)
-                                } else {
-                                    Image(systemName: "house.fill")
-                                        .font(.system(size: 27))
+                            VStack{
+                                
+                                ZStack{
+                                    if currentPage == "home" {
+                                        Circle()
+                                            .fill(Color.blue)
+                                            .frame(width: 75)
+                                        Image(systemName: "house.fill")
+                                            .font(.system(size: 27))
+                                            .foregroundColor(.white)
+                                    } else {
+                                        Image(systemName: "house.fill")
+                                            .font(.system(size: 27))
+                                    }
+                                }
+                                .frame(width: 75, height: 75)
+                            }
+                            
+                            Spacer()
+                            
+                            VStack{
+                                NavigationLink(destination: SimulationFormView()) {
+                                    ZStack{
+                                        if currentPage == "add" {
+                                            Circle()
+                                                .fill(Color.blue)
+                                                .frame(width: 75)
+                                            Image(systemName: "plus")
+                                                .font(.system(size: 27))
+                                                .foregroundColor(.white)
+                                        } else {
+                                            Image(systemName: "plus")
+                                                .font(.system(size: 27))
+                                        }
+                                    }
+                                    .frame(width: 75, height: 75)
                                 }
                             }
-                            .frame(width: 75, height: 75)
-                        }
-                        
-                        Spacer()
-                        
-                        VStack{
-                            ZStack{
-                                if currentPage == "add" {
-                                    Circle()
-                                        .fill(Color.blue)
-                                        .frame(width: 75)
-                                    Image(systemName: "plus")
-                                        .font(.system(size: 27))
-                                        .foregroundColor(.white)
-                                } else {
-                                    Image(systemName: "plus")
-                                        .font(.system(size: 27))
+                            
+                            Spacer()
+                            
+                            VStack{
+                                ZStack{
+                                    if currentPage == "calculator" {
+                                        Circle()
+                                            .fill(Color.blue)
+                                            .frame(width: 75)
+                                        Image(systemName: "filemenu.and.selection")
+                                            .font(.system(size: 27))
+                                            .foregroundColor(.white)
+                                    } else {
+                                        Image(systemName: "filemenu.and.selection")
+                                            .font(.system(size: 27))
+                                    }
                                 }
+                                .frame(width: 75, height: 75)
                             }
-                            .frame(width: 75, height: 75)
+                            
+                            Spacer()
                         }
-                        
-                        Spacer()
-                        
-                        VStack{
-                            ZStack{
-                                if currentPage == "calculator" {
-                                    Circle()
-                                        .fill(Color.blue)
-                                        .frame(width: 75)
-                                    Image(systemName: "filemenu.and.selection")
-                                        .font(.system(size: 27))
-                                        .foregroundColor(.white)
-                                } else {
-                                    Image(systemName: "filemenu.and.selection")
-                                        .font(.system(size: 27))
-                                }
-                            }
-                            .frame(width: 75, height: 75)
-                        }
-                        
-                        Spacer()
                     }
                 }
+                .padding(.bottom, 30)
+                .padding(.leading, 50)
+                .padding(.trailing, 50)
             }
-            .padding(.bottom, 30)
-            .padding(.leading, 50)
-            .padding(.trailing, 50)
+            .edgesIgnoringSafeArea(.all)
         }
-        .edgesIgnoringSafeArea(.all)
     }
 }
 

@@ -9,10 +9,9 @@ import SwiftUI
 
 struct SimulationFormView: View {
     
-    @State private var hargaProperti = 0.0
-    @State private var nominalDP = 0.0
-    @State private var masaTenor = 10.0
-    @State private var gaji = 0.0
+    @StateObject private var simulationViewModel = SimulationViewModel()
+    
+    @State private var showSimulationSheet = false
     
     @FocusState private var focusedField: FocusedField?
     
@@ -49,20 +48,20 @@ struct SimulationFormView: View {
                 
                 VStack(alignment: .leading, spacing: 20) {
                     TextFieldView(textFieldType: TextFieldType.hargaProperti,
-                                  value: $hargaProperti)
+                                  value: $simulationViewModel.hargaProperti)
                     .focused($focusedField, equals: .hargaProperti)
                   
                     TextFieldView(textFieldType: TextFieldType.uangMuka,
-                                  value: $nominalDP)
-                    .focused($focusedField, equals: .uangMuka)
+                                  value: $simulationViewModel.nominalDP)
+//                    .focused($focusedField, equals: .uangMuka)
                     
                     TextFieldView(textFieldType: TextFieldType.tenor,
-                                  value: $masaTenor)
-                    .focused($focusedField, equals: .tenor)
+                                  value: $simulationViewModel.masaTenor)
+//                    .focused($focusedField, equals: .tenor)
                     
                     TextFieldView(textFieldType: TextFieldType.gaji,
-                                  value: $gaji)
-                    .focused($focusedField, equals: .gaji)
+                                  value: $simulationViewModel.gaji)
+//                    .focused($focusedField, equals: .gaji)
                     
                 }
                 .font(.body)
@@ -70,6 +69,7 @@ struct SimulationFormView: View {
                 
                 Button(action: {
                     // add action here ngab
+                    showSimulationSheet.toggle()
                     
                 }, label: {
                     Spacer()
@@ -89,15 +89,9 @@ struct SimulationFormView: View {
             }
             .padding(.horizontal, 50)
         }
-        .toolbar {
-            ToolbarItemGroup(placement: .keyboard) {
-                Spacer()
-                Button(action: {
-                    focusedField = nil
-                }, label: {
-                    Text("Done")
-                })
-            }
+        .sheet(isPresented: $showSimulationSheet) {
+            ProgramKPRView()
+                .environmentObject(simulationViewModel)
         }
     }
 }

@@ -15,6 +15,27 @@ struct ProgramKPRDetailView: View {
     
     @ObservedObject var sheetManager = SheetManager.shared
     @State private var selectedState = SheetState.fixed
+    @State var bankSimulation: BankSimulation
+    
+    @State var angsuranFixed = 0.0
+    @State var angsuranFloating = 0.0
+    
+    func fillCalculationData() {
+        let pokok = bankSimulation.simulation.hargaProperti
+        
+        angsuranFixed = calculateMonthlyPayment(
+            pokok: pokok,
+            interestRate: Double(bankSimulation.bankProgram.fixInterests[0]),
+            tenorYear: Int(bankSimulation.simulation.masaTenor))
+        
+        angsuranFloating = calculateMonthlyPayment(
+            pokok: pokok,
+            interestRate: Double(bankSimulation.bankProgram.floatingInterests[0]),
+            tenorYear: Int(bankSimulation.simulation.masaTenor))
+        
+        // TODO Loop Here
+        var cicilans = [angsuranFixed, angsuranFloating]
+    }
     
     var body: some View {
         NavigationStack {
@@ -24,8 +45,8 @@ struct ProgramKPRDetailView: View {
                         .fill(.blue.opacity(0.1))
                         .ignoresSafeArea()
                     
-                    ProgramKPRCardView()
-                        .padding(.horizontal)
+//                    ProgramKPRCardView()
+//                        .padding(.horizontal)
                 }
                 
                 HStack {
@@ -53,7 +74,7 @@ struct ProgramKPRDetailView: View {
                         })
                         
                         Spacer()
-                        Text(String(3.99) + "%")
+                        Text(String(bankSimulation.bankProgram.fixInterests[0]) + "%")
                             .fontWeight(.bold)
                     }
                     .font(.body)
@@ -64,14 +85,14 @@ struct ProgramKPRDetailView: View {
                         HStack {
                             Text("Nilai Angsuran")
                             Spacer()
-                            Text("Rp\(7000000) / bulan")
+                            Text("Rp\(String(angsuranFixed)) / bulan")
                                 .fontWeight(.bold)
                         }
                         
                         HStack {
                             Text("Periode Tahun")
                             Spacer()
-                            Text("1 - 3")
+                            Text("1 - \(bankSimulation.bankProgram.fixInterests.count)")
                                 .fontWeight(.bold)
                         }
                     }
@@ -94,7 +115,7 @@ struct ProgramKPRDetailView: View {
                         })
                         
                         Spacer()
-                        Text(String(13.5) + "%")
+                        Text(String(bankSimulation.bankProgram.floatingInterests[0]) + "%")
                             .fontWeight(.bold)
                     }
                     .font(.body)
@@ -105,7 +126,7 @@ struct ProgramKPRDetailView: View {
                         HStack {
                             Text("Nilai Angsuran")
                             Spacer()
-                            Text("Rp\(12000000) / bulan")
+                            Text("Rp\(angsuranFloating) / bulan")
                                 .fontWeight(.bold)
                         }
                         
@@ -176,6 +197,9 @@ struct ProgramKPRDetailView: View {
                         .cornerRadius(8)
                 })
             }
+            .onAppear{
+                fillCalculationData()
+            }
             .sheet(isPresented: $sheetManager.infoIsPresented) {
                 VStack(alignment: .leading, spacing: 15) {
                     switch selectedState {
@@ -202,13 +226,13 @@ struct ProgramKPRDetailView: View {
                 .padding()
                 .presentationDetents([.height(235)])
             }
-            .navigationTitle("Program KPR")
+            .navigationTitle(bankSimulation.bankProgram.name)
         }
     }
 }
 
 struct ProgramKPRDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        ProgramKPRDetailView()
+        ProgramKPRDetailView(bankSimulation: BankSimulation(bankProgram: MockData.bankPrograms[0], simulation: Simulation(hargaProperti: 500_000_000, nominalDP: 0, masaTenor: 10, gaji: 0)))
     }
 }

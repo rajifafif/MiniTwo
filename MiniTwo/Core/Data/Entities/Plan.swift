@@ -10,8 +10,8 @@ import Foundation
 class Plan: Identifiable, Equatable {
     let id: String = UUID().uuidString
     var name: String
-    var propertyPrice: Int32
-    var downPaymentAmount: Float?
+    var propertyPrice: Decimal
+    var downPaymentAmount: Decimal?
     var tenor: Int
     
     var fixInterests: [Float]
@@ -19,8 +19,8 @@ class Plan: Identifiable, Equatable {
     
     init(
         name: String,
-        propertyPrice: Int32,
-        downPaymentAmount: Float? = 0,
+        propertyPrice: Decimal,
+        downPaymentAmount: Decimal? = 0,
         tenor: Int,
         
         fixInterests: [Float] = [],
@@ -33,6 +33,16 @@ class Plan: Identifiable, Equatable {
         
         self.fixInterests = fixInterests
         self.floatingInterests = floatingInterests
+    }
+    
+    init(planEntity: PlanEntity) {
+        self.name = planEntity.name ?? ""
+        self.downPaymentAmount = planEntity.dp as Decimal?
+        self.tenor = Int(planEntity.tenor)
+        self.propertyPrice = planEntity.propertyPrice! as Decimal
+        
+        self.fixInterests = []
+        self.floatingInterests = []
     }
 
     static func == (lhs: Plan, rhs: Plan) -> Bool {
