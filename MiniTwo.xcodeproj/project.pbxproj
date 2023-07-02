@@ -36,6 +36,8 @@
 		C16F23ED2A4BEDA1002B0213 /* SecondOnboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16F23EC2A4BEDA1002B0213 /* SecondOnboarding.swift */; };
 		C16F23EF2A4BEDA6002B0213 /* ThirdOnboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16F23EE2A4BEDA6002B0213 /* ThirdOnboarding.swift */; };
 		C16F23F12A4BEDC6002B0213 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16F23F02A4BEDC6002B0213 /* OnboardingView.swift */; };
+		C1EEDE0C2A51C54D00146812 /* PerbandinganKPRView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EEDE0B2A51C54D00146812 /* PerbandinganKPRView.swift */; };
+		C1EEDE0E2A51C61000146812 /* TrialTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EEDE0D2A51C61000146812 /* TrialTab.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,6 +91,8 @@
 		C16F23EC2A4BEDA1002B0213 /* SecondOnboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondOnboarding.swift; sourceTree = "<group>"; };
 		C16F23EE2A4BEDA6002B0213 /* ThirdOnboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdOnboarding.swift; sourceTree = "<group>"; };
 		C16F23F02A4BEDC6002B0213 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		C1EEDE0B2A51C54D00146812 /* PerbandinganKPRView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerbandinganKPRView.swift; sourceTree = "<group>"; };
+		C1EEDE0D2A51C61000146812 /* TrialTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrialTab.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -250,6 +254,7 @@
 		65B64F562A4A7A8C00F79350 /* Pages */ = {
 			isa = PBXGroup;
 			children = (
+				C1EEDE0A2A51C4A100146812 /* PerbandinganKPR */,
 				C16F23E92A4BED84002B0213 /* Onboarding */,
 				658C97B72A492F9700F4E8A6 /* SimulationFormView.swift */,
 				658C97C32A4BDB4C00F4E8A6 /* InfoSheetView.swift */,
@@ -281,6 +286,15 @@
 				C16F23F02A4BEDC6002B0213 /* OnboardingView.swift */,
 			);
 			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		C1EEDE0A2A51C4A100146812 /* PerbandinganKPR */ = {
+			isa = PBXGroup;
+			children = (
+				C1EEDE0B2A51C54D00146812 /* PerbandinganKPRView.swift */,
+				C1EEDE0D2A51C61000146812 /* TrialTab.swift */,
+			);
+			path = PerbandinganKPR;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -420,6 +434,7 @@
 				9CA9AFFB2A499B8400BFDAA6 /* PlanDataViewModel.swift in Sources */,
 				658C97BC2A4A978800F4E8A6 /* TextFieldView.swift in Sources */,
 				656D11722A3C0B0A00334554 /* MiniTwoApp.swift in Sources */,
+				C1EEDE0C2A51C54D00146812 /* PerbandinganKPRView.swift in Sources */,
 				C16F23EB2A4BED9B002B0213 /* FirstOnboarding.swift in Sources */,
 				658C97C42A4BDB4C00F4E8A6 /* InfoSheetView.swift in Sources */,
 				C16F23EF2A4BEDA6002B0213 /* ThirdOnboarding.swift in Sources */,
@@ -428,6 +443,7 @@
 				65B64F5D2A4A838100F79350 /* MainTemplate.swift in Sources */,
 				658C97B82A492F9700F4E8A6 /* SimulationFormView.swift in Sources */,
 				656D11772A3C0B0A00334554 /* MiniTwo.xcdatamodeld in Sources */,
+				C1EEDE0E2A51C61000146812 /* TrialTab.swift in Sources */,
 				658C97B42A487E2900F4E8A6 /* ProgramKPRCardView.swift in Sources */,
 				656D11792A3C0B0A00334554 /* ContentView.swift in Sources */,
 				65B64F542A43EA9900F79350 /* Bank.swift in Sources */,
