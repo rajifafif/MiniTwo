@@ -17,6 +17,8 @@ class Plan: Identifiable, Equatable {
     var fixInterests: [Float]
     var floatingInterests: [Float]
     
+    var pokok: Decimal = 0
+    
     init(
         name: String,
         propertyPrice: Decimal,
@@ -33,6 +35,8 @@ class Plan: Identifiable, Equatable {
         
         self.fixInterests = fixInterests
         self.floatingInterests = floatingInterests
+        
+        self.pokok = self.propertyPrice - (self.downPaymentAmount ?? 0)
     }
     
     init(planEntity: PlanEntity) {
@@ -43,6 +47,8 @@ class Plan: Identifiable, Equatable {
         
         self.fixInterests = []
         self.floatingInterests = []
+        
+        self.pokok = self.propertyPrice - (self.downPaymentAmount ?? 0)
     }
 
     static func == (lhs: Plan, rhs: Plan) -> Bool {

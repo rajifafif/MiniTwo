@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ProgramKPRView: View {
     
-    @EnvironmentObject var simulation: SimulationViewModel
+    @EnvironmentObject var simulation: Simulation
     
     @State var programs: [BankProgram] = []
     
@@ -54,6 +54,6 @@ struct ProgramKPRView: View {
 struct ProgramKPRView_Previews: PreviewProvider {
     static var previews: some View {
         ProgramKPRView()
-            .environmentObject(SimulationViewModel())
+            .environmentObject(Simulation())
     }
 }

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SimulationFormView: View {
     
-    @StateObject private var simulationViewModel = SimulationViewModel()
+    @StateObject private var simulationViewModel = Simulation()
     
     @State private var showSimulationSheet = false
     

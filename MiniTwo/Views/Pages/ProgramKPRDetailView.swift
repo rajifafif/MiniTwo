@@ -20,6 +20,8 @@ struct ProgramKPRDetailView: View {
     @State var angsuranFixed = 0.0
     @State var angsuranFloating = 0.0
     
+    @State var currentPlan: Plan?
+    
     func fillCalculationData() {
         let pokok = bankSimulation.simulation.hargaProperti
         
@@ -34,7 +36,19 @@ struct ProgramKPRDetailView: View {
             tenorYear: Int(bankSimulation.simulation.masaTenor))
         
         // TODO Loop Here
-        var cicilans = [angsuranFixed, angsuranFloating]
+//        var cicilans = [angsuranFixed, angsuranFloating]
+        
+        currentPlan = Plan(
+            name: "",
+            propertyPrice: Decimal(bankSimulation.simulation.hargaProperti),
+            downPaymentAmount: Decimal(bankSimulation.simulation.nominalDP),
+            tenor: Int(bankSimulation.simulation.masaTenor)
+        )
+        
+        let currentProgram = bankSimulation.bankProgram
+        
+        print("Calculating Again", currentPlan!.tenor)
+        print(programPaymentList(plan: currentPlan!, program: currentProgram))
     }
     
     var body: some View {
@@ -44,9 +58,6 @@ struct ProgramKPRDetailView: View {
                     Rectangle()
                         .fill(.blue.opacity(0.1))
                         .ignoresSafeArea()
-                    
-//                    ProgramKPRCardView()
-//                        .padding(.horizontal)
                 }
                 
                 HStack {
@@ -85,7 +96,7 @@ struct ProgramKPRDetailView: View {
                         HStack {
                             Text("Nilai Angsuran")
                             Spacer()
-                            Text("Rp\(String(angsuranFixed)) / bulan")
+                            Text("Rp \(Int(angsuranFixed)) / bulan")
                                 .fontWeight(.bold)
                         }
                         
@@ -126,7 +137,7 @@ struct ProgramKPRDetailView: View {
                         HStack {
                             Text("Nilai Angsuran")
                             Spacer()
-                            Text("Rp\(angsuranFloating) / bulan")
+                            Text("Rp \(Int(angsuranFloating)) / bulan")
                                 .fontWeight(.bold)
                         }
                         
@@ -157,25 +168,25 @@ struct ProgramKPRDetailView: View {
                         HStack {
                             Text("Plafon pinjaman")
                             Spacer()
-                            Text("Rp\(1000000000)")
+                            Text("Rp\(Int(bankSimulation.simulation.pokok))")
                         }
                         
                         HStack {
                             Text("Tenor")
                             Spacer()
-                            Text("\(15) tahun")
+                            Text("\(Int(bankSimulation.simulation.masaTenor)) tahun")
                         }
                         
                         HStack {
                             Text("Estimasi Biaya Awal")
                             Spacer()
-                            Text("Rp\(30000000)")
+                            Text("Rp\(Int(bankSimulation.simulation.estBiayaAkad))")
                         }
                         
                         HStack {
                             Text("Estimasi Biaya Sertifikat")
                             Spacer()
-                            Text("Rp\(70000000)")
+                            Text("Rp\(Int(bankSimulation.simulation.estBiayaSertifikat))")
                         }
                     }
                     .font(.body)

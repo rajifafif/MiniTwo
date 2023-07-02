@@ -35,6 +35,8 @@ struct ProgramKPRCardView: View {
                         Text("\(bankSimulation.bankProgram.name)")
                             .font(.title3)
                             .fontWeight(.bold)
+                            .multilineTextAlignment(.leading)
+                            .foregroundColor(.black)
                         
                         Spacer()
                     }
