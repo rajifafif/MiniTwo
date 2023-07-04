@@ -36,7 +36,7 @@ struct ProgramKPRView: View {
                                 compareModel.addProgram(
                                     plan: Plan(
                                         name: "Yeet",
-                                        propertyPrice: Decimal(simulation.hargaProperti),
+                                        propertyPrice: simulation.hargaProperti,
                                         tenor: Int(simulation.masaTenor),
                                         bankProgram: program
                                     )

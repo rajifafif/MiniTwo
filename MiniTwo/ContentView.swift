@@ -47,7 +47,7 @@ struct ContentView: View {
     
     private func addItem() {
         withAnimation {
-            let newPlan = Plan(name: "test\(temp)", propertyPrice: Decimal(200*temp), tenor: 120, bankProgram: nil)
+            let newPlan = Plan(name: "test\(temp)", propertyPrice: Double(200*temp), tenor: 120, bankProgram: nil)
             do {
                 try planDataViewModel.addPlan(plan: newPlan)
             } catch {

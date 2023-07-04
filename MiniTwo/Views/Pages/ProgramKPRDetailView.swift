@@ -40,8 +40,8 @@ struct ProgramKPRDetailView: View {
         
         currentPlan = Plan(
             name: "",
-            propertyPrice: Decimal(bankSimulation.simulation.hargaProperti),
-            downPaymentAmount: Decimal(bankSimulation.simulation.nominalDP),
+            propertyPrice: (bankSimulation.simulation.hargaProperti),
+            downPaymentAmount: (bankSimulation.simulation.nominalDP),
             tenor: Int(bankSimulation.simulation.masaTenor),
             bankProgram: nil
         )

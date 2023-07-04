@@ -108,8 +108,8 @@ func programPaymentList(plan: Plan, program: BankProgram) -> [Double] {
     var currentInterest = program.fixInterests[0]
     
     let totalMonth = plan.tenor * 12
-    var totalPokok = plan.propertyPrice.doubleValue
-    if let totalDPDouble = plan.downPaymentAmount?.doubleValue {
+    var totalPokok = plan.propertyPrice
+    if let totalDPDouble = plan.downPaymentAmount {
         totalPokok = totalPokok - totalDPDouble
     }
     
